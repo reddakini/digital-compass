@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema[7.0].define(version: 2022_11_21_084853) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_21_090005) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -47,7 +46,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_084853) do
     t.index ["assessment_id"], name: "index_recommendations_on_assessment_id"
     t.index ["pathway_id"], name: "index_recommendations_on_pathway_id"
   end
-  
+
+  create_table "recommended_courses", force: :cascade do |t|
+    t.bigint "course_id", null: false
+    t.bigint "recommendation_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_recommended_courses_on_course_id"
+    t.index ["recommendation_id"], name: "index_recommended_courses_on_recommendation_id"
+  end
+
   create_table "user_answers", force: :cascade do |t|
     t.integer "question_no"
     t.integer "answer_no"
@@ -73,7 +81,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_084853) do
 
   add_foreign_key "recommendations", "assessments"
   add_foreign_key "recommendations", "pathways"
-  
+  add_foreign_key "recommended_courses", "courses"
+  add_foreign_key "recommended_courses", "recommendations"
   add_foreign_key "user_answers", "assessments"
   add_foreign_key "user_answers", "users"
 end
