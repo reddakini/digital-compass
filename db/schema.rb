@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_21_093155) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_22_134150) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -35,6 +35,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_093155) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "category"
+    t.string "description_short"
+    t.text "suit_for"
+    t.string "job_roles"
+    t.integer "avg_salary"
+    t.string "projected_growth"
   end
 
   create_table "recommendations", force: :cascade do |t|
@@ -77,6 +83,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_093155) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
+    t.integer "avatar_no"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
