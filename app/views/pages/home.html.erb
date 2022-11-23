@@ -5,7 +5,7 @@
     <% if user_signed_in? %>
       <%= link_to "Go to Dashboard", "#", class: "btn-primary" %>
     <% else %>
-      <%= link_to "Let's do this!", new_user_registration_path, class: "btn btn-flat" %>
+      <%= link_to "Let's do this!", new_user_registration_path, class: "button-pri" %>
     <% end %>
   </div>
 </div>
@@ -16,9 +16,9 @@
   </div>
 
   <div class="grid">
-    <%# @pathways.each do |pathway| %>
-      <%#= render "shared/path_card", pathway: pathway %>
-    <%# end %>
+    <% @pathways.each do |pathway| %>
+      <%= render "shared/path_card", pathway: pathway %>
+    <% end %>
     <%= render "shared/path_card" %>
   </div>
 </div>

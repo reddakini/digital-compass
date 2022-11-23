@@ -1,6 +1,6 @@
 //------------- Primary Button
 
-button-pri {
+.button-pri {
   position: relative;
   display: flex;
   justify-content: center;
@@ -13,7 +13,7 @@ button-pri {
   border: none;
  }
 
- button-pri:after {
+ .button-pri:after {
   content: " ";
   width: 0%;
   height: 100%;
@@ -23,13 +23,13 @@ button-pri {
   right: 0;
  }
 
- button-pri:hover::after {
+ .button-pri:hover::after {
   right: auto;
   left: 0;
   width: 100%;
  }
 
- button-pri span {
+ .button-pri span {
   text-align: center;
   text-decoration: none;
   width: 100%;
@@ -42,7 +42,7 @@ button-pri {
   transition: all 0.3s ease-in-out;
  }
 
- button-pri:hover span {
+ .button-pri:hover span {
   color: white;
   animation: scaleUp 0.3s ease-in-out;
  }
@@ -64,7 +64,7 @@ button-pri {
 
  //------------- Secondary OR Ghost Button
 
- button-sec {
+ .button-sec {
   padding: 0.8em 1.8em;
   border: 2px solid #520049;
   position: relative;
@@ -79,7 +79,7 @@ button-pri {
   color: #520049;
  }
 
- button-sec::before {
+ .button-sec::before {
   content: '';
   width: 0;
   height: 300%;
@@ -93,10 +93,10 @@ button-pri {
   z-index: -1;
  }
 
- button-sec:hover::before {
+ .button-sec:hover::before {
   width: 105%;
  }
 
- button-sec:hover {
+ .button-sec:hover {
   color: white;
  }
