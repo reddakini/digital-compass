@@ -1,7 +1,7 @@
 // Colors
 $background-color: #ece0e8;
-$color-primary-light: #ca3782;
-$color-primary-dark: #1e0b36;
+$color-primary-light: #E7C258;
+$color-primary-dark: #520049;
 $color-black: #000;
 $color-gray-dark: #aaa;
 $color-gray-light: #eee;
@@ -131,6 +131,7 @@ body {
   transform: rotateY(-180deg);
  }
 
+
  // Front side of the card
  &__theme {
   @include absCenter;
@@ -145,7 +146,7 @@ body {
  }
 
  &__subject {
-  font-family: "Inconsolata", monospace;
+  font-family: $body-font;
   letter-spacing: 0.8rem;
   font-size: 1.6rem;
   text-transform: uppercase;
@@ -153,8 +154,8 @@ body {
  }
 
  &__title {
-  font-family: "VT323", monospace;
-  text-transform: uppercase;
+  font-family: $headers-font;
+  //text-transform: uppercase;
   font-size: 6rem;
   font-weight: 100;
  }
@@ -185,16 +186,16 @@ body {
  }
 
  &__heading-span {
-  font-family: "VT323", monospace;
+  font-family: $headers-font;
   font-size: 4.2rem;
   font-weight: 300;
-  text-transform: uppercase;
+  //text-transform: uppercase;
   padding: 1rem 1.5rem;
   color: $color-white;
  }
 
  &__details {
-  font-family: "Inconsolata", monospace;
+  font-family: $body-color;
   padding: 4rem 2rem;
   ul {
    list-style: none;
