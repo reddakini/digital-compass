@@ -14,8 +14,11 @@ Assessment.destroy_all
 Pathway.destroy_all
 
 # ******************* Users *******************
-puts "------------------------------------------------------------------------"
-puts "Seeding users..."
+  puts "\n"
+  puts "\n"
+  puts "------------------------------------------------------------------------"
+  puts "Seeding users..."
+  puts "\n"
 5.times do |i|
   user = User.new(
     first_name: Faker::Name.first_name,
@@ -31,10 +34,14 @@ end
 puts "5 users seeded!"
 
 # ******************* Pathways *******************
+puts "\n"
+puts "\n"
 puts "------------------------------------------------------------------------"
+puts "Seeding pathways..."
+puts "\n"
 filepath = "db/csv/pathways.csv"
 CSV.foreach(filepath, headers: :first_row) do |row|
-  pathway = {
+  pathway = Pathway.new(
     name: row['pw_name'],
     category: row['pw_category'],
     description_short: row['pw_short_desc'],
@@ -43,30 +50,38 @@ CSV.foreach(filepath, headers: :first_row) do |row|
     job_roles: row['pw_job_roles'],
     avg_salary: row['pw_avg_salary'],
     projected_growth: row['pw_proj_growth']
-  }
-  Pathway.create!(pathway)
+  )
+  pathway.save!
   puts "#{pathway.name} (catergory: #{pathway.category}) seeded!"
   puts "------------------------------------"
 end
+puts "pathways from csv seeded!"
 
 # ******************* Courses *******************
+puts "\n"
+puts "\n"
 puts "------------------------------------------------------------------------"
+puts "Seeding courses..."
+puts "\n"
 filepath = "db/csv/courses.csv"
 CSV.foreach(filepath, headers: :first_row) do |row|
-  course = {
+  course = Course.new(
     title: row['co_title'],
     description: row['co_desc'],
     url: row['co_url'],
     rating: row['co_rating'],
-    projected_growth: row['co_proj_growth'],
-    pathway: row['pathway']
-  }
-  Course.create!(course)
-  puts "#{course.title} for #{course.pathway} seeded!"
+    # pathway: row['pathway']
+  )
+  course.save!
+  puts "#{course.title} seeded!"
+  # puts "#{course.title} for #{course.pathway} seeded!"
   puts "------------------------------------"
 end
+puts "courses from csv seeded!"
 
 # ******************* Assessments *******************
 # puts "------------------------------------------------------------------------"
 
 # ******************* Skills *******************
+
+puts "\n"
