@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_23_044702) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_23_070851) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -28,6 +28,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_23_044702) do
     t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "pathway_skills", force: :cascade do |t|
+    t.integer "importance"
+    t.bigint "pathway_id", null: false
+    t.bigint "skill_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pathway_id"], name: "index_pathway_skills_on_pathway_id"
+    t.index ["skill_id"], name: "index_pathway_skills_on_skill_id"
   end
 
   create_table "pathways", force: :cascade do |t|
@@ -62,6 +72,20 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_23_044702) do
     t.index ["pathway_id"], name: "index_recommended_courses_on_pathway_id"
   end
 
+  create_table "skill_categories", force: :cascade do |t|
+    t.string "category_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string "skill_name"
+    t.bigint "skill_category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["skill_category_id"], name: "index_skills_on_skill_category_id"
+  end
+
   create_table "user_answers", force: :cascade do |t|
     t.integer "question_no"
     t.integer "answer_no"
@@ -88,10 +112,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_23_044702) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "pathway_skills", "pathways"
+  add_foreign_key "pathway_skills", "skills"
   add_foreign_key "recommendations", "assessments"
   add_foreign_key "recommendations", "pathways"
   add_foreign_key "recommended_courses", "courses"
   add_foreign_key "recommended_courses", "pathways"
+  add_foreign_key "skills", "skill_categories"
   add_foreign_key "user_answers", "assessments"
   add_foreign_key "user_answers", "users"
 end
