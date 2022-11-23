@@ -68,3 +68,25 @@
   text-align: center;
   margin-top: 5px;
 }
+
+// ********************** Log in/Sign in form *********************
+
+.login-flex {
+  display: flex;
+  justify-content: center;
+ }
+
+.login-form-and-heading {
+  margin-top: 35px;
+  height: 50vh;
+}
+
+.login-form-and-heading h2 {
+  color: $primary;
+  text-align: center;
+  font-size: 3em;
+}
+
+.log-in-btn {
+ margin-bottom: 10px;
+}
