@@ -31,10 +31,11 @@ CSV.foreach(filepath, headers: :first_row) do |row|
     url: row['co_url'],
     rating: row['co_rating'],
     projected_growth: row['co_proj_growth'],
-    pathway: row['pathway']
   }
+  pathway = row['pathway']
+
   puts "---------------------------HASHED---------------------------"
-  puts course
+  puts 
   puts "\n"
   puts "\n"
   # Pathway.create!(pathway)
