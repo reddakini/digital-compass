@@ -4,14 +4,17 @@
 require "csv"
 
 # ******************* Clearing *******************
-# check ordering with TAs!!!!!
-UserAnswer.destroy_all
+# UserAnswer.destroy_all
+# Recommendation.destroy_all
+# Assessment.destroy_all
+# UserSkills.destroy_all
 RecommendedCourse.destroy_all
-Recommendation.destroy_all
-User.destroy_all
+PathwaySkill.destroy_all
+Skill.destroy_all
+SkillCategory.destroy_all
 Course.destroy_all
-Assessment.destroy_all
 Pathway.destroy_all
+User.destroy_all
 
 # ******************* Users *******************
 puts "\n"
