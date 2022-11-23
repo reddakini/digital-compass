@@ -36,3 +36,17 @@
     margin: 0px;
   }
 }
+.btn-nav {
+position: relative;
+display: flex;
+justify-content: center;
+align-items: center;
+border-radius: 5px;
+background: #E7C258;
+overflow: hidden;
+text-decoration: none;
+color: white;
+padding: 5px 12px;
+font-family: $body-font;
+font-size: 14px;
+}

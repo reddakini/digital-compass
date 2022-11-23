@@ -1,0 +1,102 @@
+//------------- Primary Button
+
+.button-pri {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+  background: #E7C258;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  border: none;
+ }
+
+ .button-pri:after {
+  content: " ";
+  width: 0%;
+  height: 100%;
+  background: #520049;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+  right: 0;
+ }
+
+ .button-pri:hover::after {
+  right: auto;
+  left: 0;
+  width: 100%;
+ }
+
+ .button-pri span {
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  padding: 18px 25px;
+  color: #fff;
+  font-size: 1.125em;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  z-index: 20;
+  transition: all 0.3s ease-in-out;
+ }
+
+ .button-pri:hover span {
+  color: white;
+  animation: scaleUp 0.3s ease-in-out;
+ }
+
+ @keyframes scaleUp {
+  0% {
+   transform: scale(1);
+  }
+
+  50% {
+   transform: scale(0.95);
+  }
+
+  100% {
+   transform: scale(1);
+  }
+ }
+
+
+ //------------- Secondary OR Ghost Button
+
+ .button-sec {
+  padding: 0.8em 1.8em;
+  border: 2px solid #520049;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  transition: .3s;
+  z-index: 1;
+  font-family: inherit;
+  color: #520049;
+ }
+
+ .button-sec::before {
+  content: '';
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #520049;
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+ }
+
+ .button-sec:hover::before {
+  width: 105%;
+ }
+
+ .button-sec:hover {
+  color: white;
+ }

@@ -1,2 +1,24 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/3727459/pexels-photo-3727459.jpeg);">
+  <div class="container">
+    <h1><span data-controller="typed-js"></span></h1>
+    <p>We help you find out which is the best career in Technology for you. Change your life, future-proof your career and get started today!!</p>
+    <% if user_signed_in? %>
+      <%= link_to "Go to Dashboard", "#", class: "btn-primary" %>
+    <% else %>
+      <%= link_to "Let's do this!", new_user_registration_path, class: "button-pri" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="my-5">
+    <h2> Explore the most in-demand tech career pathways</h2>
+  </div>
+
+  <div class="grid">
+    <% @pathways.each do |pathway| %>
+      <%= render "shared/path_card", pathway: pathway %>
+    <% end %>
+    <%#= render "shared/path_card" %>
+  </div>
+</div>

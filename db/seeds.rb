@@ -31,7 +31,7 @@ Pathway.destroy_all
   puts "#{user.email} / pw: #{user.password} seeded!"
   puts "------------------------------------"
 end
-puts "5 users seeded!"
+puts "5 users seeded using Faker!"
 
 # ******************* Pathways *******************
 puts "\n"
@@ -55,13 +55,13 @@ CSV.foreach(filepath, headers: :first_row) do |row|
   puts "#{pathway.name} (catergory: #{pathway.category}) seeded!"
   puts "------------------------------------"
 end
-puts "pathways from csv seeded!"
+puts "pathways seeded from db/pathways.csv!"
 
 # ******************* Courses *******************
 puts "\n"
 puts "\n"
 puts "------------------------------------------------------------------------"
-puts "Seeding courses..."
+puts "Seeding courses and recommended_courses..."
 puts "\n"
 filepath = "db/csv/courses.csv"
 CSV.foreach(filepath, headers: :first_row) do |row|
@@ -69,23 +69,29 @@ CSV.foreach(filepath, headers: :first_row) do |row|
     title: row['co_title'],
     description: row['co_desc'],
     url: row['co_url'],
-    rating: row['co_rating'],
+    rating: row['co_rating']
   )
   course.save!
   puts "#{course.title} seeded!"
   # puts "#{course.title} for #{course.pathway} seeded!"
+  pathways = row['pathway'].split(',')
+  pathways.each do |pathway|
+    temp_pathway = Pathway.find_by(name: pathway)
+    reco_course = RecommendedCourse.new(
+      pathway: temp_pathway,
+      course: course
+    )
+    reco_course.save!
+    puts "... for #{temp_pathway.name} seeded!"
+  end
   puts "------------------------------------"
-
-
-
-
-  # pathway: row['pathway']
 end
-puts "courses and recommended_courses from csv seeded!"
+puts "courses and recommended_courses seeded from db/courses.csv!"
+
+# ******************* Skills *******************
+# puts "------------------------------------------------------------------------"
 
 # ******************* Assessments *******************
 # puts "------------------------------------------------------------------------"
-
-# ******************* Skills *******************
 
 puts "\n"

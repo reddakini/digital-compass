@@ -23,22 +23,23 @@ require "csv"
 # end
 
 # ******************* Courses *******************
-filepath = "./courses.csv"
-CSV.foreach(filepath, headers: :first_row) do |row|
-  course = {
-    title: row['co_title'],
-    description: row['co_desc'],
-    url: row['co_url'],
-    rating: row['co_rating'],
-    projected_growth: row['co_proj_growth'],
-  }
-  pathway = row['pathway']
+# filepath = "./courses.csv"
+# CSV.foreach(filepath, headers: :first_row) do |row|
+#   course = {
+#     title: row['co_title'],
+#     description: row['co_desc'],
+#     url: row['co_url'],
+#     rating: row['co_rating'],
+#     projected_growth: row['co_proj_growth'],
+#   }
+#   pathway = row['pathway'].split(',')
+#   pp pathway
 
 
 
-  puts "---------------------------HASHED---------------------------"
-  puts course
-  puts "\n"
-  puts "\n"
+  # puts "---------------------------HASHED---------------------------"
+  # puts course
+  # puts "\n"
+  # puts "\n"
   # Pathway.create!(pathway)
 end
