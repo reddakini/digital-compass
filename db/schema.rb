@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_21_093155) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_23_044702) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -35,6 +35,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_093155) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "category"
+    t.string "description_short"
+    t.text "suit_for"
+    t.string "job_roles"
+    t.integer "avg_salary"
+    t.string "projected_growth"
   end
 
   create_table "recommendations", force: :cascade do |t|
@@ -49,11 +55,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_093155) do
 
   create_table "recommended_courses", force: :cascade do |t|
     t.bigint "course_id", null: false
-    t.bigint "recommendation_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "pathway_id", null: false
     t.index ["course_id"], name: "index_recommended_courses_on_course_id"
-    t.index ["recommendation_id"], name: "index_recommended_courses_on_recommendation_id"
+    t.index ["pathway_id"], name: "index_recommended_courses_on_pathway_id"
   end
 
   create_table "user_answers", force: :cascade do |t|
@@ -77,6 +83,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_093155) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
+    t.integer "avatar_no"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -84,7 +91,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_21_093155) do
   add_foreign_key "recommendations", "assessments"
   add_foreign_key "recommendations", "pathways"
   add_foreign_key "recommended_courses", "courses"
-  add_foreign_key "recommended_courses", "recommendations"
+  add_foreign_key "recommended_courses", "pathways"
   add_foreign_key "user_answers", "assessments"
   add_foreign_key "user_answers", "users"
 end
