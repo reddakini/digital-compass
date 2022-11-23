@@ -1,0 +1,35 @@
+.dashboard-page {
+  display: grid;
+  grid-template-columns: 0.8fr 3.2fr;
+
+
+}
+
+.profile-sidebar {
+  background-color: #FAF2DA;
+  position: sticky;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: $primary;
+}
+
+.image-profile {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-top: 10px;
+}
+
+.just-line {
+  height: 2px;
+  background-color: $primary;
+  width: 80%;
+  border-radius: 80%;
+}
+
+.recommended-courses h3 {
+  text-transform: uppercase;
+}

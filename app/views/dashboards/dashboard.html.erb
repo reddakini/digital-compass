@@ -1,0 +1,36 @@
+<div class="dashboard-page">
+  <div class="profile-sidebar">
+    <div class="profile-picture">
+      <%#= cl_image_tag @dashboard.user.PROFILE_PICTURE.key %>
+      <%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzC9m6tOz_pttY17RpEp_f5DDgDn7Gj8W5mw&usqp=CAU", class: "image-profile" %>
+    </div>
+
+    <div class="name-title">
+       <%#= @SOMETHING.user.first_name %>
+       <%#= @SOMETHING.user.last_name %>
+      <h3>Hermione Granger</h3>
+      <p>Ass kicking witch</p>
+    </div>
+
+    <div class="just-line">
+    </div>
+
+    <div class="recommended-courses">
+      <h3>Recommended Courses</h3>
+      <p>course 1</p>
+      <p>course 2</p>
+      <p>course 3</p>
+    </div>
+
+    <div class="button-pri">
+      <%= link_to "More...", root_path %>
+    </div>
+
+     <div class="just-line">
+    </div>
+
+  </div>
+
+  <div class="dashboard-content">
+  </div>
+</div>
