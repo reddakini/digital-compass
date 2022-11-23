@@ -4,18 +4,18 @@
   <div class="card__side card__side--back">
    <div class="card__cover">
     <h4 class="card__heading">
-     <span class="card__heading-span"><% pathway.name %></span>
+     <span class="card__heading-span"><%= pathway.name %></span>
     </h4>
    </div>
    <div class="card__details">
-    <ul>
+    <ul mb-3>
      <li>Builds, troubleshoots, and mantains software applications</li>
-     <li>Average Salary: Fr. <%= pathway.avg_salary %>/li>
-     <li>Projected Job Growth: <%= pathway.projected_growth %></li>
-     <%# <li>Advanced Animations</li> %>
+     <li>Average Salary: Fr. <%= pathway.avg_salary %></li>
+     <li class="mb-3">Projected Job Growth: <%= pathway.projected_growth %></li>
+     <li><%= link_to "Learn More >", "#", class: "button-sec" %></li>
     </ul>
     <%# TODO: Enter path below %>
-   <%= link_to "Learn More >", "#", class: "button-sec" %>
+
    </div>
   </div>
 
@@ -23,7 +23,7 @@
    <div class="card__theme">
     <div class="card__theme-box">
      <p class="card__subject">CAREER PATH</p>
-     <p class="card__title"><% pathway.name %></p>
+     <p class="card__title"><%= pathway.name %></p>
     </div>
    </div>
   </div>

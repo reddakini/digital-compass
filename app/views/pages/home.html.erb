@@ -3,9 +3,10 @@
     <h1><span data-controller="typed-js"></span></h1>
     <p>We help you find out which is the best career in Technology for you. Change your life, future-proof your career and get started today!!</p>
     <% if user_signed_in? %>
-      <%= link_to "Go to Dashboard", "#", class: "btn-primary" %>
+      <%= link_to "Go to Dashboard", "#", class: "button-pri" %>
     <% else %>
-      <%= link_to "Let's do this!", new_user_registration_path, class: "button-pri" %>
+      <button class="button-pri"><%= link_to "Let's do this!", new_user_registration_path%> </button>
+      <%#= link_to "Let's do this!", new_user_registration_path, class: "button-pri"%>
     <% end %>
   </div>
 </div>
@@ -19,6 +20,6 @@
     <% @pathways.each do |pathway| %>
       <%= render "shared/path_card", pathway: pathway %>
     <% end %>
-    <%= render "shared/path_card" %>
+    <%#= render "shared/path_card" %>
   </div>
 </div>
