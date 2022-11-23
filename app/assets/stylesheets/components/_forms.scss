@@ -7,6 +7,7 @@
 .sign-up-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  height: 100vh;
 }
 
 .sign-up-text {
@@ -15,8 +16,8 @@
   flex-direction: column;
   justify-content: center;
   padding-left: 86px;
-  height: 650px;
   font-family: $headers-font;
+  //border: 1px solid red;
 }
 
 .sign-up-h1 {
@@ -35,11 +36,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  //border: 1px solid green;
 }
 
 .form-signup {
   border-radius: 5px;
-  width: 300px;
+  width: 350px;
   padding: 15px;
   background-color: $alm-white;
 }
