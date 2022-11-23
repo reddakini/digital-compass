@@ -70,14 +70,18 @@ CSV.foreach(filepath, headers: :first_row) do |row|
     description: row['co_desc'],
     url: row['co_url'],
     rating: row['co_rating'],
-    # pathway: row['pathway']
   )
   course.save!
   puts "#{course.title} seeded!"
   # puts "#{course.title} for #{course.pathway} seeded!"
   puts "------------------------------------"
+
+
+
+
+  # pathway: row['pathway']
 end
-puts "courses from csv seeded!"
+puts "courses and recommended_courses from csv seeded!"
 
 # ******************* Assessments *******************
 # puts "------------------------------------------------------------------------"

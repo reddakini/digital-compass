@@ -34,8 +34,10 @@ CSV.foreach(filepath, headers: :first_row) do |row|
   }
   pathway = row['pathway']
 
+
+
   puts "---------------------------HASHED---------------------------"
-  puts 
+  puts course
   puts "\n"
   puts "\n"
   # Pathway.create!(pathway)
