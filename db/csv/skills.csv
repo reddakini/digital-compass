@@ -1,0 +1,58 @@
+sk_skill,sk_category,pathway
+CSS,FrontEnd,"FrontEnd Developer,FullStack Developer"
+HTML,FrontEnd,"FrontEnd Developer,FullStack Developer"
+JavaScript,FrontEnd,"FrontEnd Developer,FullStack Developer"
+React,FrontEnd,"FrontEnd Developer,FullStack Developer"
+Responsive Web Design,FrontEnd,"FrontEnd Developer,FullStack Developer"
+UI & UX Design,FrontEnd,"FrontEnd Developer,FullStack Developer"
+Querying APIs,FrontEnd,"FrontEnd Developer,FullStack Developer"
+Ruby,BackEnd,"BackEnd Developer,FullStack Developer"
+Rails,BackEnd,"BackEnd Developer,FullStack Developer"
+SQL and Databases,BackEnd,"BackEnd Developer,FullStack Developer"
+Python,BackEnd,"BackEnd Developer,FullStack Developer"
+Building/woking with APIs,BackEnd,"BackEnd Developer,FullStack Developer"
+Writing tests,BackEnd,"BackEnd Developer,FullStack Developer"
+Algorithms and data structures,BackEnd,"BackEnd Developer,FullStack Developer,Data Science"
+Data processing,Data,"Data Analyst,Data Scientist"
+Data visualisation,Data,"Data Analyst,Data Scientist"
+Data analysis,Data,"Data Analyst,Data Scientist"
+Statistics,Data,"Data Analyst,Data Scientist"
+Data cleaning and organisation,Data,"Data Analyst,Data Scientist"
+ML & DL,Data,Data Scientist
+Data Warehousing,Data,Data Scientist
+Creativity,SoftSkill,"FrontEnd Developer,BackEnd Developer,Fullstack Developer,Data Scientist,Data Analyst,Digital Consultant,Product Manager,UX/UI Designer,IT Project Manager"
+Adaptability,SoftSkill,"FrontEnd Developer,BackEnd Developer,Fullstack Developer,Data Scientist,Data Analyst,Digital Consultant,Product Manager,UX/UI Designer,IT Project Manager"
+Flexibility,SoftSkill,"FrontEnd Developer,BackEnd Developer,Fullstack Developer,Data Scientist,Data Analyst,Digital Consultant,Product Manager,UX/UI Designer,IT Project Manager"
+User Experience (UX),UX/UI,"UX/UI Designer,FullsStack Developer"
+UX Research,UX/UI,"UX/UI Designer,FullsStack Developer"
+Wireframe,UX/UI,"UX/UI Designer,FullsStack Developer"
+Prototype,UX/UI,"UX/UI Designer,FullsStack Developer"
+User Experience Design (UXD),UX/UI,"UX/UI Designer,FullsStack Developer"
+Usability Testing,UX/UI,"UX/UI Designer,FullsStack Developer"
+Mockup,UX/UI,"UX/UI Designer,FullsStack Developer"
+Figma,UX/UI,"UX/UI Designer,FullsStack Developer"
+Adobe XD,UX/UI,"UX/UI Designer,FullsStack Developer"
+UX design jobs,UX/UI,"UX/UI Designer,FullsStack Developer"
+Spreadsheet,Data,Data Analyst
+SQL,Data,Data Analyst
+Questioning,Data,Data Analyst
+Decision-Making,Data,Data Analyst
+Problem Solving,Data,Data Analyst
+Metadata,Data,Data Analyst
+Data Collection,Data,Data Analyst
+Data Ethics,Data,Data Analyst
+Sample Size Determination,Data,Data Analyst
+Cloud Hosting,BackEnd,"BackEnd Developer,FullStack Developer"
+Python Programming,BackEnd,"BackEnd Developer,FullStack Developer"
+Data Structure,BackEnd,"BackEnd Developer,FullStack Developer"
+Computer Programming,BackEnd,"BackEnd Developer,FullStack Developer"
+Django (Web Framework),BackEnd,"BackEnd Developer,FullStack Developer"
+Linux,BackEnd,"BackEnd Developer,FullStack Developer"
+Web Development,BackEnd,"BackEnd Developer,FullStack Developer"
+Bash (Unix Shell),BackEnd,"BackEnd Developer,FullStack Developer"
+Github,BackEnd,"BackEnd Developer,FullStack Developer"
+Version Control,BackEnd,"BackEnd Developer,FullStack Developer"
+Web Development Tools,FrontEnd,"FrontEnd Developer,FullStack Developer"
+Front-End Web Development,FrontEnd,"FrontEnd Developer,FullStack Developer"
+Test-Driven Development,FrontEnd,"FrontEnd Developer,FullStack Developer"
+Object-Oriented Programming (OOP),FrontEnd,"FrontEnd Developer,FullStack Developer"

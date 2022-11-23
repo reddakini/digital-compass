@@ -1,4 +1,4 @@
 class RecommendedCourse < ApplicationRecord
   belongs_to :course
-  belongs_to :recommendation
+  belongs_to :pathway
 end
