@@ -1,17 +1,14 @@
-pw_name,pw_category,pw_short_desc,pw_long_desc,pw_suit,pw_job_roles,avg_salary,proj_growth,course1,course2,course3,,,Source1,Source2,Source3
-FrontEnd Developer,Developer,,"A front end developer reads a design file and creates a plan to turn 
-that design into valid HTML, CSS, and JavaScript code. A web browser 
-then renders this code when you go to a site. HTML, CSS, and JavaScript 
-are the three core languages used to build the front end of a website.","Front end web developers spend their days translating designs into code. They get to know the inner workings behind a site’s design. They then use this knowledge to build a functional and aesthetically pleasing experience.
+pw_name,pw_category,pw_short_desc,pw_long_desc,pw_suit,pw_job_roles,pw_avg_salary,pw_proj_growth
+FrontEnd Developer,Developer,"Front-end developers use HTML, CSS, and JavaScript to build the client side of a website.","A front end developer reads a design file and creates a plan to turn that design into valid HTML, CSS, and JavaScript code. A web browser then renders this code when you go to a site. HTML, CSS, and JavaScript are the three core languages used to build the front end of a website.","Front end web developers spend their days translating designs into code. They get to know the inner workings behind a site’s design. They then use this knowledge to build a functional and aesthetically pleasing experience.
 
 For developers who enjoy creative work, front end web development could be an excellent career. Not only will you code other people’s designs but you’ll also have some say in the overall creative direction of a website.
 
-If you are more interested in the “brains” behind a website, then back end or full stack web development may be for you. Whatever you choose, one thing is for sure—careers in web development all afford lucrative salaries, great career prospects, and unique responsibilities.",,,,,,,,,,,
-BackEnd Developer,Developer,,"In short, the back end is all of the software that runs on the server, and it’s the backbone that makes the front end functional. While some sites, typically called static sites, only really have a front end, any site with dynamic content wouldn’t work without a back end supporting it.
+If you are more interested in the “brains” behind a website, then back end or full stack web development may be for you. Whatever you choose, one thing is for sure—careers in web development all afford lucrative salaries, great career prospects, and unique responsibilities.","Front-End Developer, Website Developer, Full Stack Developer, Front End Engineer, Software Engineer",100200,8%
+BackEnd Developer,Developer,A back-end web developer is responsible for server-side web application logic and integration of the work front-end web developers do.,"In short, the back end is all of the software that runs on the server, and it’s the backbone that makes the front end functional. While some sites, typically called static sites, only really have a front end, any site with dynamic content wouldn’t work without a back end supporting it.
 
 They maintain core databases, manage application program interfaces (APIs), as well as test and debug back end processes to ensure that a program functions smoothly and effectively at all times.","If you are more interested in the “brains” behind a website, then back end development may be for you. You will spend your days building algorithms to make informed decisions, spend a lot of time on coding challenges and working with more complex programming languages.
 
-You will also be involved with the behind-the-scenes architecture of the website, often working with different programming languages and frameworks dependent on the company.",,,,,,,,,,,
+You will also be involved with the behind-the-scenes architecture of the website, often working with different programming languages and frameworks dependent on the company.","Back-End Developer, Website Developer, Full Stack Developer, Back End Engineer, Software Engineer",116000,7%
 Fullstack Developer,Developer,"Builds, troubleshoots, and mantains software applications","A fullstack developer is an expert in both front end and back end development. That is, these devs have a keen understanding of both “stacks.” A software stack is simply a collection of different technologies that developers use to accomplish certain goals.
 
 These developers can create the interactive elements of a website, the same way front end developers can. They can also develop websites and applications on the server-side, as well as work with databases.
@@ -24,24 +21,15 @@ To be a good full-stack web developer, you need to have an  understanding of pro
 
 Most full-stack developers are employed on mid-to-large teams. This  is because there is a greater need for people who focus all their time  on a particular topic. With that said, some smaller teams may have  full-stack web developers.
 
-You can expect to use your full-stack web development skills in some  of your web projects. Say, for instance, you want to build a to-do list front-end app. You may decide to write a back-end app to store data.  Such a project involves working with the front-end, back-end, and a database.",,"Fr. 100,913",22%,,,,,,,,
-Data Engineer,Data,,"Data engineers build data pipelines that transform raw, unstructured data into formats data scientists can use for analysis. They are responsible for creating and maintaining the analytics infrastructure that enables almost every other data function. This includes architectures such as databases, servers, and large-scale processing systems.
-
-It starts with cleaning, organizing, and processing raw, unstructured data. Data pipelines refer to the design of systems for processing and storing data. These systems capture, cleanse, transform and route data to destination systems, taking raw data from a SaaS platform such as a CRM system or email marketing tool and storing it in a data warehouse so it can be analyzed using analytics and business intelligence tools.","The main reason to become a data engineer is because you are above all: a programmer.
-
-They are software engineers who specialize in data and data technologies, connecting all the pieces of the data ecosystem within a company. 
-
-That makes them quite different from data scientists (and data analysts), who certainly have programming skills, but who typically aren’t engineers. It’s not uncommon for data scientists to hand over their work (e.g., a recommendation system) to data engineers for actual implementation.
-
-And while it’s data analysts and data scientists who are doing the analysis, it’s typically data engineers who are building the data pipelines and other systems necessary to make sure that everyone has easy access to the data they need (and that no one has access to the data who shouldn’t).",,,,,,,,,,,
-Data Scientist,Data,,"Data scientists utilize their analytical, statistical, and programming skills to collect, analyze, and interpret large data sets. They then use this information to develop data-driven solutions to  business challenges.
+You can expect to use your full-stack web development skills in some  of your web projects. Say, for instance, you want to build a to-do list front-end app. You may decide to write a back-end app to store data.  Such a project involves working with the front-end, back-end, and a database.","Application Developer, Cloud Application Developer, Junior Full-Stack Cloud Native Application Developer, Full-Stack Cloud Native Application Developer",100900,22%
+Data Scientist,Data,A data scientist turns raw data into valuable insights that an organisation needs in order to grow and compete. They interpret and analyse data from multiple sources to come up with imaginative solutions to problems.,"Data scientists utilize their analytical, statistical, and programming skills to collect, analyze, and interpret large data sets. They then use this information to develop data-driven solutions to  business challenges.
 
 A Data Scientist is a senior role and usually leads a team of Data Analysts and Engineers. They have a wide range of technical competencies including: statistics and machine learning, coding languages, databases, machine learning, and reporting technologies.
 
 A data scientist possesses the background and skill set to perform statistical analysis to shape a data strategy. The data scientist may also build the algorithm that's fed into a ML/DL model, working with a Data Engineer to ensure that the pipeline is set up correctly.","A Data Scientist is the captain of the data team and has a strong understanding of all areas of data: programming, architecture, modelling, analysis. At the same time, they also have a good business brain and know how to deal with key stakeholders at a management level.
 
-As a result, a Data Scientist has a senior role. They should have experience in programming, business and have worked with large data sets before.",,,,,,,,,,,
-Data Analyst,Data,,"The Data Analyst's job is primarily to turn data into useful insight.
+As a result, a Data Scientist has a senior role. They should have experience in programming, business and have worked with large data sets before.","Data Scientist, Business Intelligence Analyst, Data Analyst, Data Architect, Data Engineer, Marketing Analyst, Operations Analyst, Quantitative Analyst",112400,36%
+Data Analyst,Data,"Data analysts collect, organise and interpret statistical information to help colleagues and clients use it make decisions.","The Data Analyst's job is primarily to turn data into useful insight.
 
 They have the knowledge and skills to turn raw data into information and insight, which can be used to make business decisions. They look for trends in data and need to have the business awareness to highlight what is meaningful.
 
@@ -49,36 +37,12 @@ All modern Data Analyst roles require a strong knowledge of SQL, as the primary 
 
 Unlike Data Engineers and Data Scientists, there are mostly entry-level or mid-level roles and a great place to start a career in data. The majority of alumni from data start here, before progressing into data engineering, machine learning or deep learning when within the company.
 
-Disclaimer: there are many type of Data Analyst roles, dependent on the skills.",,,,,,,,,,,
-Digital Consultant,Business Meets Tech,,"A consultant is a professional who helps businesses connect their business strategy to implementation across different digital fields. Digital consultants are required to assess the design assets and pick the right technological solutions for a given platform, as well as helping with building short- and long-term marketing strategies. They must discover new ways for businesses to engage with existing customers as well as attract new ones by evaluating the current marketing strategy.","Becoming a consultant is a great route for alumni who do not want to code every day.
-
-The number one factor that draws alumni to become consultants is the diversity of work. As a consultant you will work on a range of projects, with a variety of colleagues and clients. You will gain experience across sectors, industries and even countries, as many consultancies also offer opportunities to travel.
+Disclaimer: there are many type of Data Analyst roles, dependent on the skills.","Junior Data Analyst, Associate Data Analyst, Junior Data Scientist, Finance Analyst, Operations Analyst, Data Technician, Business Performance Analyst, Marketing Analyst, Healthcare Analyst",90000,25%
+Digital Consultant,Business Meets Tech,"Digital consultants help businesses create and implement strategies in marketing, public relations, web development, branding and related digital fields.","A consultant is a professional who helps businesses connect their business strategy to implementation across different digital fields. Digital consultants are required to assess the design assets and pick the right technological solutions for a given platform, as well as helping with building short- and long-term marketing strategies. They must discover new ways for businesses to engage with existing customers as well as attract new ones by evaluating the current marketing strategy.","Becoming a consultant is a great route for someone who likes technology but enjoy to have diverse work. As a consultant you will work on a range of projects, with a variety of colleagues and clients. You will gain experience across sectors, industries and even countries, as many consultancies also offer opportunities to travel.
 
 You will have the opportunity to learn about other industries and deep-dive into businesses. Combining your experience in web development or data and a degree or work experience in business, many alumni land great roles, often in digital department of multinational consultancies (Accenture, BCG DV, Deloitte Digital to name but a few).
 
-Disclaimer: there are a variety of consultants where our alumni land jobs (Data Consultants, Management Consultants, Digital Consultants). The most important thing to think about is where your knowledge and hard skills lie - this will dictate you to which job roles you should look out for.",,,,,,,,,,,
-Solutions Engineer,Business Meets Tech,,"A Solutions Engineer interfaces with customers and identifies their needs.
-
-They work closely with sales, customers, development, marketing, design, product teams to deliver great solutions to the customer. There is a constant feedback loop between customers and future development of a product and a good SE needs to be on top of all that.
-
-A solutions engineer will help all teams to be successful in order to deliver the right product to the right customer. At times, they should be able to jump in and help all teams, whether it is to develop a new feature, help with the support of new or existing customers, suggest UI improvements and prioritize the roadmap ahead.","A Solutions Engineer is a perfect role for someone who wants to think like a Software Engineer and work with developers, but wants to retain some business development aspect in their role.
-
-Dependent on the company and the hierarchy, a Solutions Engineer may code or not. If there is less coding in the job, it is likely that it is more focused on Sales and interacting with the client, while leading a team of engineers to build the solution itself.
-
-It is similar role to a technical Consultant. Both are working directly with clients, analysing their primary problems and trying to think of a technological solution.
-
-The difference is that a Solutions Engineer is primarily trying to build a customised product and make a sale. A Consultant meanwhile is advising a client and billing by the hour, day or project.",,,,,,,,,,,
-Growth Marketer,Business Meets Tech,,"A Growth Manager is responsible for revenue and business growth, particularly with new markets or products.
-
-They are responsible for identifying a company’s growth opportunities and managing its team’s effort to fill in these opportunity gaps. The growth manager sets goals and leads the efforts to reach these goals.
-
-The role of growth manager was borne out of the need for someone to be solely responsible for growth – a leader who can focus exclusively on it without being distracted by the myriad of other business concerns faced by those at the top.","A Growth Manager is someone who loves business development and marketing and wants to integrate more technology and analytics into their everyday role.
-
-They may code a bit - for instance web scraping and working with APIs. But like a PM, the role is primarily collaborative and managerial. They work in a cross-functional team wutg all parts of a business: Sales, Marketing, Product, Design and Engineering.
-
-A Growth Manager must be creative, resourceful and a good knowledge of tools and technologies. Often, they are the pioneers of a business: testing new ideas to drive the growth of a business. They are masters of A/B testing and lean methodology
-
-However, it should not be confused with that of the Product Manager, who guides the development and growth of a product, but not of the entire organisation. A Growth Manager's primary metric is about customer acquisition and revenue, rather than users and engagement (although the two often overlap).",,,,,,,,,,,
+Disclaimer: there are a variety of consultants where our alumni land jobs (Data Consultants, Management Consultants, Digital Consultants). The most important thing to think about is where your knowledge and hard skills lie - this will dictate you to which job roles you should look out for.","Data Consultants, Management Consultants, Technology Consultant, Digital Consultant",95000,23%
 Product Manager,Business Meets Tech,"Product management is about empathizing with users, identifying opportunities, and collaborating with others.","A Product Manager is quite simply the overseer of a company's product and how it develops.
 
 They work at the intersection of business, tech and design, managing stakeholders from Sales/Marketing, Design and Engineering teams. Its primary metric of success is gauged around users and engagement.
@@ -89,5 +53,10 @@ It is a management role with little executional work directly impacting the prod
 
 Two key characteristics of a PM are: creativity and user-centricity. They should be creative in thinking of solutions as well as obsessed with quantitative and qualitative feedback from users.
 
-Many PMs go on to become founders in the long run. It is actually the best entrance route to becoming a founder of a startup, as you then start to have real empathy with the user.","Associate Product Manager, Product Manager, Senior Product Manager, VP of Product, Chief of Product","Fr. 110,916",32%,https://www.coursera.org/specializations/real-world-product-management,,,,,https://theproductmanager.com/general/statistics-career-product-management/,https://www.linkedin.com/pulse/future-product-management-report-2022-glance-matt-best/,
-UX Designer,,,,,,"Fr. 91,950",13%,www.technigo.io,,,,,,,
+Many PMs go on to become founders in the long run. It is actually the best entrance route to becoming a founder of a startup, as you then start to have real empathy with the user.","Associate Product Manager, Product Manager, Senior Product Manager, VP of Product, Chief of Product",110900,32%
+UX/UI Designer,Design,"UI UX designers create the user interface for an app, website, or other interactive media. ","The UI UX Designer helps create products with a good user experience. They are responsible for understanding what users want from their device and then designing it so they can find all of its features easily without any hassle. They also make sure everything works properly when combined in one package.
+
+UI UX designers create the user interface for an app, website, or other interactive media. Their work includes collaborating with product managers and engineers to gather requirements from users before designing ideas that can be communicated using storyboards. They also process flows or sitemaps. They'll then use their creativity while applying color palettes based on what best fits into a particular design conceptually.","Good communication skills are essential for a UI UX Designer. They need the ability to ask others what they think about designs or projects before even starting work on them. They also use empathy to understand their users, develop solutions that solve their problems, and listen effectively.","User Experience (UX) designer, UI Designer, Interaction Designer, Visual Designer, Product Designer",91900,13%
+IT Project Manager,Business Meets Tech,"An IT project manager is a professional charged with overseeing the process of planning, executing and delegating responsibilities around an organization's information technology (IT) pursuits and goals.","The Information Technology Project Manager will plan, establish, and manage information technology (IT) projects and will serve as a liaison between the business and technical aspects of assigned projects.","IT Project Management may be a good suit for you if you like structure, getting things done and are a committed person that generally takes full responsibility for delivering results. Project management is definitely a good career with high salaries and plenty of variety at work, but it’s also a demanding job that can be highly stressful at times.
+
+Some Project Managers enjoy their jobs because of the variety – no two days look alike. Others appreciate the fast-paced, urgent nature of the work. And another feature of the job many find appealing is that you can actually finish something and move on to a new challenge, which isn’t the case with a lot of other positions.","IT Project Manager, Techical Project Manager, IT Specialist",112600,12%

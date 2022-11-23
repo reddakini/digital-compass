@@ -1,20 +1,40 @@
 require "csv"
 
-filepath = "./pathways.csv"
+# ******************* Pathways *******************
+# filepath = "./pathways.csv"
 
+# CSV.foreach(filepath, headers: :first_row) do |row|
+#   puts "------------------------------------------------------------"
+#   pathway = {
+#     name: row['pw_name'],
+#     category: row['pw_category'],
+#     description_short: row['pw_short_desc'],
+#     description: row['pw_long_desc'],
+#     suit_for: row['pw_suit'],
+#     job_roles: row['pw_job_roles'],
+#     avg_salary: row['pw_avg_salary'],
+#     projected_growth: row['pw_proj_growth']
+#   }
+#   puts "---------------------------HASHED---------------------------"
+#   puts pathway
+#   puts "\n"
+#   puts "\n"
+#   # Pathway.create!(pathway)
+# end
+
+# ******************* Courses *******************
+filepath = "./courses.csv"
 CSV.foreach(filepath, headers: :first_row) do |row|
-  puts "------------------------------------------------------------"
-  puts "#{row['pw_name']} (#{row['pw_category']})"
-  puts "Desc(short): #{row['pw_short_desc']}"
-  puts "Desc(long): #{row['pw_long_desc']}"
-  pathway = {
-    name: row['pw_name'],
-    description: row['pw_long_desc']
+  course = {
+    title: row['co_title'],
+    description: row['co_desc'],
+    url: row['co_url'],
+    rating: row['co_rating'],
+    projected_growth: row['co_proj_growth'],
+    pathway: row['pathway']
   }
   puts "---------------------------HASHED---------------------------"
-  puts pathway
-  # hash pathway { description: "has \n inside the strings" }
-  # WILL THIS BE A PROBLEM?????????????????????????????????????
+  puts course
   puts "\n"
   puts "\n"
   # Pathway.create!(pathway)
