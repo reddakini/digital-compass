@@ -14,21 +14,21 @@ Assessment.destroy_all
 Pathway.destroy_all
 
 # ******************* Users *******************
-  puts "\n"
-  puts "\n"
-  puts "------------------------------------------------------------------------"
-  puts "Seeding users..."
-  puts "\n"
+puts "\n"
+puts "\n"
+puts "------------------------------------------------------------------------"
+puts "Seeding users..."
+puts "\n"
 5.times do |i|
-  user = User.new(
+  new_user = User.new(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     email: "email#{i + 1}@gmail.com",
     password: "123456"
   )
-  user.save!
-  puts "#{user.first_name} #{user.last_name}"
-  puts "#{user.email} / pw: #{user.password} seeded!"
+  new_user.save!
+  puts "#{new_user.first_name} #{new_user.last_name}"
+  puts "#{new_user.email} / pw: #{new_user.password} seeded!"
   puts "------------------------------------"
 end
 puts "5 users seeded using Faker!"
@@ -41,7 +41,7 @@ puts "Seeding pathways..."
 puts "\n"
 filepath = "db/csv/pathways.csv"
 CSV.foreach(filepath, headers: :first_row) do |row|
-  pathway = Pathway.new(
+  new_pathway = Pathway.new(
     name: row['pw_name'],
     category: row['pw_category'],
     description_short: row['pw_short_desc'],
@@ -51,8 +51,8 @@ CSV.foreach(filepath, headers: :first_row) do |row|
     avg_salary: row['pw_avg_salary'],
     projected_growth: row['pw_proj_growth']
   )
-  pathway.save!
-  puts "#{pathway.name} (catergory: #{pathway.category}) seeded!"
+  new_pathway.save!
+  puts "#{new_pathway.name} (catergory: #{new_pathway.category}) seeded!"
   puts "------------------------------------"
 end
 puts "pathways seeded from db/pathways.csv!"
@@ -76,14 +76,13 @@ CSV.foreach(filepath, headers: :first_row) do |row|
 
   pathways = row['pathway'].split(',')
   pathways.each do |pathway|
-    # TODO: change temp_pathway to pathway IF POSSIBLE........................
-    temp_pathway = Pathway.find_by(name: pathway)
-    new_reco_course = RecommendedCourse.new(
-      pathway: temp_pathway,
+    found_pathway = Pathway.find_by(name: pathway)
+    new_recommended_course = RecommendedCourse.new(
+      pathway: found_pathway,
       course: new_course
     )
-    new_reco_course.save!
-    puts "... for #{temp_pathway.name} seeded!"
+    new_recommended_course.save!
+    puts "... for #{found_pathway.name} seeded!"
   end
   puts "------------------------------------"
 end
@@ -111,15 +110,13 @@ CSV.foreach(filepath, headers: :first_row) do |row|
 
   pathways = row['pathway'].split(',')
   pathways.each do |pathway|
-    temp_pathway = Pathway.find_by(name: pathway)
-    # pp temp_pathway
-    # pp new_skill
+    found_pathway = Pathway.find_by(name: pathway)
     new_pathway_skill = PathwaySkill.new(
-      pathway: temp_pathway,
+      pathway: found_pathway,
       skill: new_skill
     )
     new_pathway_skill.save!
-    puts "... for #{temp_pathway.name} seeded!"
+    puts "... for #{found_pathway.name} seeded!"
   end
   puts "------------------------------------"
 end
