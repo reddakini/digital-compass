@@ -65,23 +65,24 @@ puts "Seeding courses and recommended_courses..."
 puts "\n"
 filepath = "db/csv/courses.csv"
 CSV.foreach(filepath, headers: :first_row) do |row|
-  course = Course.new(
+  new_course = Course.new(
     title: row['co_title'],
     description: row['co_desc'],
     url: row['co_url'],
     rating: row['co_rating']
   )
-  course.save!
-  puts "#{course.title} seeded!"
-  # puts "#{course.title} for #{course.pathway} seeded!"
+  new_course.save!
+  puts "#{new_course.title} seeded!"
+
   pathways = row['pathway'].split(',')
   pathways.each do |pathway|
+    # TODO: change temp_pathway to pathway IF POSSIBLE........................
     temp_pathway = Pathway.find_by(name: pathway)
-    reco_course = RecommendedCourse.new(
+    new_reco_course = RecommendedCourse.new(
       pathway: temp_pathway,
-      course: course
+      course: new_course
     )
-    reco_course.save!
+    new_reco_course.save!
     puts "... for #{temp_pathway.name} seeded!"
   end
   puts "------------------------------------"
@@ -89,9 +90,40 @@ end
 puts "courses and recommended_courses seeded from db/courses.csv!"
 
 # ******************* Skills *******************
-# puts "------------------------------------------------------------------------"
+puts "\n"
+puts "\n"
+puts "------------------------------------------------------------------------"
+puts "Seeding skill_categories, skills and pathway_skills..."
+puts "\n"
+filepath = "db/csv/skills.csv"
+CSV.foreach(filepath, headers: :first_row) do |row|
+  new_skill_category = SkillCategory.new(
+    name: row['sk_category']
+  )
+  new_skill_category.save!
 
-# ******************* Assessments *******************
-# puts "------------------------------------------------------------------------"
+  new_skill = Skill.new(
+    name: row['sk_skill'],
+    skill_category: new_skill_category
+  )
+  new_skill.save!
+  puts "#{new_skill.name} with category #{new_skill_category.name} seeded!"
 
+  pathways = row['pathway'].split(',')
+  pathways.each do |pathway|
+    temp_pathway = Pathway.find_by(name: pathway)
+    # pp temp_pathway
+    # pp new_skill
+    new_pathway_skill = PathwaySkill.new(
+      pathway: temp_pathway,
+      skill: new_skill
+    )
+    new_pathway_skill.save!
+    puts "... for #{temp_pathway.name} seeded!"
+  end
+  puts "------------------------------------"
+end
+puts "skill_categories, skills and pathway_skills seeded from db/skill.csv!"
+
+# ******************* Further Seeds after here *******************
 puts "\n"

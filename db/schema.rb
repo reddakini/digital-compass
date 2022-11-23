@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_23_070851) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_23_080131) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,7 +31,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_23_070851) do
   end
 
   create_table "pathway_skills", force: :cascade do |t|
-    t.integer "importance"
     t.bigint "pathway_id", null: false
     t.bigint "skill_id", null: false
     t.datetime "created_at", null: false
@@ -73,13 +72,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_23_070851) do
   end
 
   create_table "skill_categories", force: :cascade do |t|
-    t.string "category_name"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "skills", force: :cascade do |t|
-    t.string "skill_name"
+    t.string "name"
     t.bigint "skill_category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
