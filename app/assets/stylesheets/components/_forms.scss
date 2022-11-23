@@ -1,0 +1,71 @@
+.background-yellow {
+  background-color: $secondary;
+}
+
+.sign-up-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.sign-up-text {
+  color: $primary;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 86px;
+  height: 650px;
+  font-family: $headers-font;
+}
+
+.sign-up-h1 {
+  font-size: 45px;
+  letter-spacing: 1px;
+  padding-right: 70px;
+}
+
+.sign-up-text p {
+  font-size: 20px;
+  padding-right: 70px;
+  margin-top: 10px;
+}
+
+.sign-up-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-signup {
+  border-radius: 5px;
+  width: 300px;
+  padding: 15px;
+  background-color: $alm-white;
+}
+
+.form-signup .form-label {
+  color: $primary;
+}
+
+.sign-up-button {
+  text-align: center;
+  background-color: $primary;
+  border-radius: 5px;
+}
+
+.sign-up-btn-text {
+  color: $alm-white;
+}
+
+// .sign-up-button:hover {
+//   background-color: $alm-white;
+// }
+
+// .sign-up-btn-text:hover {
+//   color: $primary;
+//   background-color: green;
+// }
+
+.already-signed {
+  text-align: center;
+  margin-top: 5px;
+}
