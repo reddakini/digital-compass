@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :pathways, only: [:index, :show]
 
   get "/dashboard", to: "dashboards#dashboard"
+  get "/assessment", to: "pages#assessment"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
