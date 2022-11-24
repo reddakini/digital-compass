@@ -7,11 +7,11 @@ export default class extends Controller {
     console.log("hi from the controller");
       var typed3 = new Typed(this.element, {
         strings: [
-          'Find a path into Tech',
-          'Find YOUR path into Tech'
+          'Finding a path into Tech...',
+          'Find YOUR path into Tech !'
         ],
-        typeSpeed: 50,
-        backSpeed: 30,
+        typeSpeed: 40,
+        backSpeed: 40,
         smartBackspace: true, // this is a default
         loop: true
     })

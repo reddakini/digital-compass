@@ -78,7 +78,7 @@ body {
 .artboard {
  display: flex;
  @include flexCenter;
- padding: 4rem;
+ padding: 0px;
  height: 100%;
  position: relative;
 
@@ -91,10 +91,10 @@ body {
  flex: initial;
  position: relative;
  height: 52rem;
- width: 48rem;
+ width: 40rem;
  -moz-perspective: 200rem;
  perspective: 200rem;
- margin: 2rem;
+ margin: 5px;
 
  &__side {
   height: 52rem;
@@ -197,6 +197,7 @@ body {
  &__details {
   font-family: $body-color;
   padding: 4rem 2rem;
+  margin-right: 10px;
   ul {
    list-style: none;
    width: 80%;
@@ -204,7 +205,7 @@ body {
 
    li {
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     padding: 1rem;
 
     &:not(:last-child) {
