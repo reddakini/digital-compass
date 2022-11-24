@@ -82,13 +82,14 @@
 // ***************** dashboard content **************
 
 .dashboard-content {
-  padding-left: 30px;
+  // padding-left: 30px;
+  margin: 0 40px;
 }
 
 .dashboard-header {
   display: flex;
   justify-content: space-between;
-  margin-top: 70px;
+  // margin-top: 70px;
   margin-bottom: 70px;
 }
 
@@ -103,25 +104,29 @@
   margin-right: 30px;
 }
 
-.overview-content {
+#nav-overview {
   border: 1px solid yellow;
   display: grid;
   grid-template-rows: 1fr 1fr;
-  grid-gap: 10px;
+  grid-gap: 50px;
 }
 .overview-first-line {
   border: 1px solid pink;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 20px;
 }
 
 .progress-chart {
   border: 1px solid purple;
 }
 
-.two-results {
+.first-result-card {
   border: 1px solid green;
+}
 
+.second-result-card {
+  border: 1px solid rgb(38, 48, 124);
 }
 
 .overview-second-line {
