@@ -38,8 +38,8 @@
   <%#=*************** DASHBOARD**********************  %>
 
   <div class="dashboard-content">
-    <div class="dashboard-header">
-      <div class="dashboard-heading mt-5">
+    <div class="dashboard-header mt-5">
+      <div class="dashboard-heading">
         <h1>Your dashboard</h1>
       </div>
       <div class="dashboard-header-button">
@@ -58,11 +58,12 @@
       </nav>
 
       <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active overview-content" id="nav-overview" role="tabpanel" aria-labelledby="nav-overview-tab">
+        <div class="tab-pane fade show active content-overview" id="nav-overview" role="tabpanel" aria-labelledby="nav-overview-tab">
 
           <div class="overview-first-line">
             <div class="progress-chart">
-              <%= pie_chart @progress_chart, donut: true %>
+            <h3></
+              <%= pie_chart @progress_chart, donut: true, class: "progress-chart-img" %>
             </div>
             <div class="first-result-card">
             </div>
