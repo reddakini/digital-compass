@@ -1,14 +1,38 @@
 <div class="navbar navbar-expand-sm navbar-dc">
   <div class="container d-flex justify-space-between">
-    <div class="d-flex align-items-center">
-      <%= link_to "#", class: "navbar-brand" do %>
-        <%= image_tag "digital_compass_logo.png", width:"60px" %>
-      <% end %>
-      <div class="logo-text">
-        <p>DIGITAL</p>
-        <p>COMPASS</p>
+      <div class="d-flex align-items-center">
+        <%= link_to root_path, class: "navbar-brand" do %>
+          <%= image_tag "Digital Compass logo (1).png", width:"60px" %>
+        <% end %>
+        <div class="logo-text">
+          <p>DIGITAL</p>
+          <p>COMPASS</p>
+        </div>
       </div>
-    </div>
-    <%= link_to "profile", root_path, class: "btn-nav" %>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          <% if user_signed_in? %>
+            <li class="nav-item dropdown">
+              <%= image_tag "more.png", class: "dropdown-toggle", width:"30px", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                <%= link_to "Home", root_path, class: "dropdown-item" %>
+                <%= link_to "Dashbord", dashboard_path, class: "dropdown-item" %>
+                <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+              </div>
+            </li>
+          <% else %>
+            <li class="nav-item">
+              <%= link_to "Sign Up", new_user_registration_path, class: "nav-link btn-nav-signup me-3" %>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Log In", new_user_session_path, class: "nav-link btn-nav-login" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
   </div>
 </div>
