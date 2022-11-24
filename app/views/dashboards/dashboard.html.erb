@@ -62,12 +62,34 @@
 
           <div class="overview-first-line">
             <div class="progress-chart">
-            <h3></
-              <%= pie_chart @progress_chart, donut: true, class: "progress-chart-img" %>
+            <h2>Progress</h2>
+              <%= pie_chart @progress_chart, donut: true %>
             </div>
-            <div class="first-result-card">
-            </div>
-            <div class="second-result-card">
+
+            <div class="two-results">
+              <div class="two-results-heading">
+                <h2>Your results</h2>
+              </div>
+
+              <div class="two-result-cards">
+
+                <div class="result-card">
+                  <h2>DATA SCIENTIST</h2>
+                  <br>
+                  <h1>87%</h1>
+                  <div class="button-pri button-pri-profile">
+                   <%= link_to "More...", root_path %>
+                  </div>
+                </div>
+                <div class="result-card">
+                  <h2>BACK-END DEVELOPER</h2>
+                  <br>
+                  <h1>76%</h1>
+                  <div class="button-pri button-pri-profile">
+                   <%= link_to "More...", root_path %>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
