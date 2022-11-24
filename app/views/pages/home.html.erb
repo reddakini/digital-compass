@@ -1,11 +1,11 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/3727459/pexels-photo-3727459.jpeg);">
   <div class="container">
     <h1><span data-controller="typed-js"></span></h1>
-    <p>We help you find out which is the best career in Technology for you. Change your life, future-proof your career and get started today!!</p>
+    <p class="mt-4">We help you find out which is the best career in Technology for you. <br> Change your life, future-proof your career and get started today!!</p>
     <% if user_signed_in? %>
-      <%= link_to "Go to Dashboard", "#", class: "button-pri" %>
+      <button class="button-pri mt-5"><%= link_to "Go to Dashboard", dashboard_path %></button>
     <% else %>
-      <button class="button-pri"><%= link_to "Let's do this!", new_user_registration_path%> </button>
+      <button class="button-pri mt-5"><%= link_to "Let's do this!", new_user_registration_path%> </button>
       <%#= link_to "Let's do this!", new_user_registration_path, class: "button-pri"%>
     <% end %>
   </div>
@@ -13,7 +13,9 @@
 
 <div class="container">
   <div class="my-5">
-    <h2> Explore the most in-demand tech career pathways</h2>
+    <h2> Explore the most in-demand career pathways in Technology</h2>
+        <div class="button-learn">
+    </div>
   </div>
 
   <div class="grid">

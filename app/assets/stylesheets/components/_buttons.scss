@@ -1,3 +1,10 @@
+ //------------- Links inside the buttons
+
+ a {
+  text-decoration: none;
+  text-align: center;
+ }
+
 
 //------------- Primary Button
 
@@ -37,8 +44,8 @@
   padding: 11px 18px;
   color: #fff;
   font-size: 1.9em;
-  font-weight: 700;
-  letter-spacing: 0.15em;
+  font-weight: 600;
+  letter-spacing: 0.14em;
   z-index: 20;
   transition: all 0.3s ease-in-out;
  }
@@ -66,38 +73,50 @@
  //------------- Secondary OR Ghost Button
 
  .button-sec {
-  padding: 0.8em 1.8em;
-  border: 2px solid #520049;
+  --color: #520049;
+  font-family: $body-font;
+  display: inline-block;
+  width: 8em;
+  height: 2.6em;
+  line-height: 2.5em;
+  margin: 20px;
   position: relative;
   overflow: hidden;
-  background-color: transparent;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 16px;
-  transition: .3s;
+  border: 2px solid var(--color);
+  transition: color .5s;
   z-index: 1;
-  font-family: $body-font;
-  color: #520049;
+  font-size: 17px;
+  border-radius: 3px;
+  font-weight: 500;
+  color: var(--color);
  }
 
- .button-sec::before {
-  content: '';
-  width: 0;
-  height: 300%;
+ .button-sec:before {
+  content: "";
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(45deg);
-  background: #520049;
-  transition: .5s ease;
-  display: block;
   z-index: -1;
- }
-
- .button-sec:hover::before {
-  width: 105%;
+  background: var(--color);
+  height: 150px;
+  width: 200px;
+  border-radius: 50%;
  }
 
  .button-sec:hover {
-  color: white;
+  color: #fff;
+ }
+
+ .button-sec:before {
+  top: 100%;
+  left: 100%;
+  transition: all .7s;
+ }
+
+ .button-sec:hover:before {
+  top: -30px;
+  left: -30px;
+ }
+
+ .button-sec:active:before {
+  background: #3a0ca3;
+  transition: background 0s;
  }
