@@ -4,4 +4,7 @@ class PagesController < ApplicationController
   def home
     @pathways = Pathway.all
   end
+
+  def assessment
+  end
 end
