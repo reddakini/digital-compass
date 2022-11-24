@@ -1,7 +1,12 @@
-<div class="container" data-controller="typeform">
-  <h1 class="align-item-center">Welcome to the assessment</h1>
-  <div id="form">
-    <div data-tf-widget="wuDccAgU"></div>
-  </div>
-</div>
+<%# <div class="typeform-element">I have z-index 10k</div> %>
+<div id="typeform-wrapper"></div>
 <script src="//embed.typeform.com/next/embed.js"></script>
+<script>
+  window.tf.createWidget('DfXB0zI2', {
+    container: document.getElementById('typeform-wrapper'),
+    // transitiveSearchParams: ['foo', 'bar'],
+    // medium: 'demo-test',
+    hidden: { name: "Hermine" },
+    // iframeProps: { title: 'Foo Bar' },
+  })
+</script>

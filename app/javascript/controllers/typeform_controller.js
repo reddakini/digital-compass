@@ -4,7 +4,6 @@ import { createWidget } from '@typeform/embed'
 // Connects to data-controller="typeform"
 export default class extends Controller {
   connect() {
-    // console.log("Hello Typeform");
-    createWidget('wuDccAgU', { container: document.querySelector('#form') })
+    // const name = current_user.first_name
   }
 }
