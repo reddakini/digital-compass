@@ -1,9 +1,9 @@
 .dashboard-page {
   display: grid;
   grid-template-columns: 0.7fr 3.3fr;
-
-
 }
+
+// ***************** profile sidebar **************
 
 .profile-sidebar {
   background-color: #FAF2DA;
@@ -77,4 +77,63 @@
   text-decoration: none;
   text-transform: none;
   font-size: 85%;
+}
+
+// ***************** dashboard content **************
+
+.dashboard-content {
+  padding-left: 30px;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+.dashboard-heading {
+  font-family: $headers-font;
+  color: $primary;
+  font-size: 5rem;
+}
+
+.button-pri-dashboard {
+  width: 100px;
+  margin-right: 30px;
+}
+
+.overview-content {
+  border: 1px solid yellow;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 10px;
+}
+.overview-first-line {
+  border: 1px solid pink;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.progress-chart {
+  border: 1px solid purple;
+}
+
+.two-results {
+  border: 1px solid green;
+
+}
+
+.overview-second-line {
+  border: 1px solid aqua;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.overview-skills {
+  border: 1px solid red;
+}
+
+.values-chart {
+  border: 1px solid orange;
 }
