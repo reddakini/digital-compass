@@ -103,7 +103,13 @@
   margin-right: 140px;
   padding: 13px 31px;
   margin-top: 15px;
+  font-size: 20px;
+  color: $alm-white;
 }
+
+// .button-pri-dashboard:hover {
+//   color: $alm-white;
+// }
 
 #nav-overview {
   // border: 1px solid yellow;
@@ -206,7 +212,8 @@
   --bs-nav-tabs-link-hover-border-color: #520049 #520049 #52004900;
   --bs-nav-tabs-link-active-color: #520049;
   --bs-nav-tabs-link-active-bg: #b5454500;
-  --bs-nav-tabs-link-active-border-color: #520049 #520049 #ece0e8;
+  --bs-nav-tabs-link-active-border-color: #520049 #520049 #ffffff;
   border-bottom: var(--bs-nav-tabs-border-width) solid var(--bs-nav-tabs-border-color);
   margin-bottom: 20px;
+  font-size: 15px;
 }
