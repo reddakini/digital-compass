@@ -61,23 +61,14 @@
 }
 
 .button-pri-profile a {
-  font-size: 1.5em;
+  font-size: 17px;
   font-weight: normal;
 }
 
 .button-sec-profile {
   width: 80%;
-  height: 3em;
-  padding-top: 10px;
-  border-radius: 5px;
-  margin: 5px 0 10px 0;
 }
 
-.button-sec-profile a {
-  text-decoration: none;
-  text-transform: none;
-  font-size: 85%;
-}
 
 // ***************** dashboard content **************
 
@@ -107,8 +98,8 @@
   color: $alm-white;
 }
 
-// .button-pri-dashboard:hover {
-//   color: $alm-white;
+// .button-pri-dashboard a {
+//   color: greenyellow;
 // }
 
 #nav-overview {
@@ -221,4 +212,11 @@
   border-bottom: var(--bs-nav-tabs-border-width) solid var(--bs-nav-tabs-border-color);
   margin-bottom: 20px;
   font-size: 15px;
+}
+
+
+.donut-chart {
+  width: 300px;
+  background-color: #e0d15a;
+  color: green;
 }

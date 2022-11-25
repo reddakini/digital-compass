@@ -29,7 +29,7 @@
      <div class="just-line">
     </div>
 
-    <div class="class button-sec button-sec-profile">
+    <div class="class button-sec-simple button-sec-profile">
       <%= link_to "See all pathways", root_path %>
     </div>
 
@@ -63,7 +63,8 @@
           <div class="overview-first-line">
             <div class="progress-chart">
             <h2>Progress</h2>
-              <%= pie_chart @progress_chart, donut: true %>
+              <%= pie_chart @progress_chart, donut: true, colors: ["#000000", "pink"], legend: false, class: "donut-chart" %>
+
             </div>
 
             <div class="two-results">
