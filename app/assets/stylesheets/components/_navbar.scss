@@ -18,12 +18,7 @@
 }
 
 
-.nav-item img {
-  &:hover {
-    outline: 1px solid green;
-    outline-offset: -8px;
-  }
-}
+
 .btn-ghost {
   border-radius: 0px 10px 10px 0px;
 }
@@ -49,6 +44,7 @@ color: white;
 padding: 5px 12px;
 font-family: $body-font;
 font-size: 14px;
+width: 90px;
 }
 .btn-nav-login {
   position: relative;
@@ -63,4 +59,8 @@ font-size: 14px;
   padding: 5px 12px;
   font-family: $body-font;
   font-size: 14px;
+  width: 90px;
+  }
+  .dropdown-item {
+    font-size: 16px;
   }
