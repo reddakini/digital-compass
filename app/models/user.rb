@@ -4,10 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :user_answers
-  has_many :assessments, through: :user_answers
-  has_many :recommendations, through: :assessments
-  has_many :pathways, through: :recommendations
+  has_many :recommendations
+  has_many :recommended_pathways, through: :recommendations
+  has_many :pathways, through: :recommended_pathways
   has_many :recommended_courses, through: :pathways
   has_many :courses, through: :recommended_courses
 

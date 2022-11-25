@@ -9,7 +9,7 @@
   background-color: #FAF2DA;
   position: sticky;
   top: 0px;
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,29 +61,20 @@
 }
 
 .button-pri-profile a {
-  font-size: 1.5em;
+  font-size: 17px;
   font-weight: normal;
 }
 
 .button-sec-profile {
   width: 80%;
-  height: 3em;
-  padding-top: 10px;
-  border-radius: 5px;
-  margin: 5px 0 10px 0;
 }
 
-.button-sec-profile a {
-  text-decoration: none;
-  text-transform: none;
-  font-size: 85%;
-}
 
 // ***************** dashboard content **************
 
 .dashboard-content {
   // padding-left: 30px;
-  margin: 0 40px;
+  margin: 0 70px;
 }
 
 .dashboard-header {
@@ -99,19 +90,18 @@
 }
 
 .button-pri-dashboard {
-  min-width: 230px;
-  margin-right: 140px;
-  padding: 13px 31px;
-  margin-top: 15px;
-  font-size: 20px;
   color: $alm-white;
+  min-width: 230px;
+  margin-right: 40px;
+  margin-top: 15px;
+  font-size: 10px;
 }
 
-// .button-pri-dashboard:hover {
-//   color: $alm-white;
+// .button-pri-dashboard a {
+//   color: greenyellow;
 // }
 
-#nav-overview {
+.content-overview {
   // border: 1px solid yellow;
   display: grid;
   grid-template-rows: 0.8fr 0.8fr;
@@ -120,7 +110,7 @@
   color: $primary;
 }
 
-#nav-overview h2 {
+.content-overview h2 {
   text-align: center;
 }
 
@@ -180,18 +170,23 @@
 }
 
 .overview-second-line {
-  border: 1px solid aqua;
+  // border: 1px solid aqua;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 50px
 }
 
 .overview-skills {
-  border: 1px solid red;
-  width: 80%;
+  // border: 1px solid red;
+  border: 2px solid $primary;
+  border-radius: 5px;
+  padding: 100px;
 }
 
 .values-chart {
-  border: 1px solid orange;
+  // border: 1px solid orange;
+  border: 2px solid $primary;
+  border-radius: 5px;
 }
 
 
@@ -216,4 +211,11 @@
   border-bottom: var(--bs-nav-tabs-border-width) solid var(--bs-nav-tabs-border-color);
   margin-bottom: 20px;
   font-size: 15px;
+}
+
+
+.donut-chart {
+  width: 300px;
+  background-color: #e0d15a;
+  color: green;
 }
