@@ -2,6 +2,7 @@ require "json"
 require "open-uri"
 
 class RecommendationsController < ApplicationController
+  # TODO: needs to be refactored!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
   def add
     @recommendation = Recommendation.new
     @recommendation.user = current_user
