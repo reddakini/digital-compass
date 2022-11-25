@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-dc">
-  <div class="container d-flex justify-space-between">
-      <div class="d-flex align-items-center">
+  <div class="d-flex justify-space-between w-100 mx-5">
+      <div class="d-flex align-items-center w-100 ">
         <%= link_to root_path, class: "navbar-brand" do %>
           <%= image_tag "Digital Compass logo (1).png", width:"60px" %>
         <% end %>
@@ -20,7 +20,8 @@
               <%= image_tag "more.png", class: "dropdown-toggle", width:"30px", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                 <%= link_to "Home", root_path, class: "dropdown-item" %>
-                <%= link_to "Dashbord", dashboard_path, class: "dropdown-item" %>
+                <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
+                <%= link_to "Explore Paths", pathways_path, class: "dropdown-item" %>
                 <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
               </div>
             </li>
