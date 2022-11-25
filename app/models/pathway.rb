@@ -1,5 +1,5 @@
 class Pathway < ApplicationRecord
-  has_many :recommendations
+  # has_many :recommendations, through: :recommended_pathways
   has_many :recommended_courses
   has_many :courses, through: :recommended_courses
 
