@@ -43,7 +43,10 @@
         <h1>Your dashboard</h1>
       </div>
       <div class="dashboard-header-button">
-        <%= link_to "Take the quiz", root_path, class: "button-pri button-pri-dashboard" %>
+      <div class="button-pri button-pri-dashboard">
+
+        <%= link_to "Take the quiz", root_path %>
+      </div>
     </div>
 
     </div>
@@ -58,12 +61,12 @@
       </nav>
 
       <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active content-overview" id="nav-overview" role="tabpanel" aria-labelledby="nav-overview-tab">
-
+        <div class="tab-pane fade show active" id="nav-overview" role="tabpanel" aria-labelledby="nav-overview-tab">
+<div class="content-overview">
           <div class="overview-first-line">
             <div class="progress-chart">
             <h2>Progress</h2>
-              <%= pie_chart @progress_chart, donut: true, colors: ["#000000", "pink"], legend: false, class: "donut-chart" %>
+              <%= pie_chart @progress_chart, donut: true, colors: ["#716F35", "#DB9A8F"], legend: false, class: "donut-chart" %>
 
             </div>
 
@@ -79,7 +82,7 @@
                   <br>
                   <h1>87%</h1>
                   <div class="button-pri button-pri-profile">
-                   <%= link_to "More...", root_path %>
+                   <%= link_to "More...",  pathway_path(Pathway.find_by(name: 'Data Scientist')) %>
                   </div>
                 </div>
                 <div class="result-card">
@@ -87,7 +90,7 @@
                   <br>
                   <h1>76%</h1>
                   <div class="button-pri button-pri-profile">
-                   <%= link_to "More...", root_path %>
+                   <%= link_to "More...",  pathway_path(Pathway.find_by(name: 'BackEnd Developer')) %>
                   </div>
                 </div>
               </div>
@@ -96,19 +99,21 @@
 
           <div class="overview-second-line">
             <div class="overview-skills">
+            <h2>And here you shouls see your skills once you fill it in! (And after we code it)</h2>
             </div>
             <div class="values-chart">
               <%= pie_chart @result_chart, download: "progress-chart-pie-chart" %>
             </div>
           </div>
         </div>
+        </div>
 
         <div class="tab-pane fade" id="nav-results" role="tabpanel" aria-labelledby="nav-results-tab">
-          <p>this is a content for res</p>
+        <%= image_tag "screenshot-results.jpg", alt: "text", width: "80%" %>
         </div>
 
         <div class="tab-pane fade" id="nav-skills" role="tabpanel" aria-labelledby="nav-skills-tab">
-          <p>this is a content for sk</p>
+        <%= image_tag "screenshot-skills.jpg", alt: "text" %>
         </div>
       </div>
     </div>
