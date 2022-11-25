@@ -1,5 +1,7 @@
 <div class="container">
-  <h1 class="mt-5 mb-5 text-center">Future-proof your career by getting into Tech</h1>
+  <div class="my-5 py-5">>
+    <h1 class="text-center">Future-proof your career by getting into Tech</h1>
+  </div>
 
   <div class="container mb-5">
     <p>According to Swiss ICT, there is a shortage of skilled IT workers and for every unemployed ICT specialist, there are four vacancies.
@@ -7,9 +9,9 @@
     This means that demand is currently out-stripping supply.</p>
     <p>ICT is the seventh largest professional field in Switzerland and the number of ICT workers is still growing 2.5 times quicker than the total number of employees.
     So, these are great times to consider a career change or a lateral entry into Tech.
-    If you are still not sure which path may be the best for you, make sure to <%= link_to "sign-up", new_user_registration_path, class: "fw-bold $primary" %>  and start by taking our assessment.</p>
+    If you are still not sure which path may be the best for you, make sure to <%= link_to "sign-up", new_user_registration_path, class: "real-link" %>  and start by taking our assessment.</p>
   </div>
-  <h2 class="mt-5 mb-5"> Check out the following Tech career pathways:</h2>
+  <h2 class="my-5 py-5"> Check out the following Tech career pathways:</h2>
     <div class="grid">
       <% @pathways.each do |pathway| %>
         <%= render "shared/path_card", pathway: pathway %>
