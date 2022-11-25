@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_25_045345) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_25_050356) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -61,6 +61,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_25_045345) do
     t.index ["pathway_id"], name: "index_recommended_courses_on_pathway_id"
   end
 
+  create_table "recommended_pathways", force: :cascade do |t|
+    t.integer "match_score"
+    t.bigint "recommendation_id", null: false
+    t.bigint "pathway_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pathway_id"], name: "index_recommended_pathways_on_pathway_id"
+    t.index ["recommendation_id"], name: "index_recommended_pathways_on_recommendation_id"
+  end
+
   create_table "skill_categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -95,5 +105,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_25_045345) do
   add_foreign_key "recommendations", "users"
   add_foreign_key "recommended_courses", "courses"
   add_foreign_key "recommended_courses", "pathways"
+  add_foreign_key "recommended_pathways", "pathways"
+  add_foreign_key "recommended_pathways", "recommendations"
   add_foreign_key "skills", "skill_categories"
 end
