@@ -180,18 +180,23 @@
 }
 
 .overview-second-line {
-  border: 1px solid aqua;
+  // border: 1px solid aqua;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 50px
 }
 
 .overview-skills {
-  border: 1px solid red;
-  width: 80%;
+  // border: 1px solid red;
+  border: 2px solid $primary;
+  border-radius: 5px;
+  // width: 80%;
 }
 
 .values-chart {
-  border: 1px solid orange;
+  // border: 1px solid orange;
+  border: 2px solid $primary;
+  border-radius: 5px;
 }
 
 
