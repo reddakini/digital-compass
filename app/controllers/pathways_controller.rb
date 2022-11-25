@@ -8,9 +8,4 @@ class PathwaysController < ApplicationController
   def show
     @pathway = Pathway.find(params[:id])
   end
-
-
-  private
-
-
 end
