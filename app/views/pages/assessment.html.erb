@@ -2,7 +2,8 @@
 <script>
   function onSubmit(event) {
     // console.log(event);
-    const response_id = event.response_id
+    const response_id = event.response_id;
+    window.location.replace(`/recommendations/add?response_id=${response_id}`);
   }
 </script>
 <script src="//embed.typeform.com/next/embed.js"></script>

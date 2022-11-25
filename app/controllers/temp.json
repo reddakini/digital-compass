@@ -1,0 +1,102 @@
+{"total_items": 1,
+ "page_count": 1,
+ "items":
+  [{"landing_id": "6tcxj4nwfrhq6mnnfw6tcxj4nunlnbau",
+    "token": "6tcxj4nwfrhq6mnnfw6tcxj4nunlnbau",
+    "response_id": "6tcxj4nwfrhq6mnnfw6tcxj4nunlnbau",
+    "landed_at": "2022-11-25T05:22:13Z",
+    "submitted_at": "2022-11-25T05:22:40Z",
+    "metadata":
+     {"user_agent":
+       "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36",
+      "platform": "other",
+      "referer":
+       "https://form.typeform.com/to/DfXB0zI2?typeform-embed-id=3905959559266139&typeform-embed=embed-widget&typeform-source=localhost&typeform-medium=embed-sdk&typeform-medium-version=next",
+      "network_id": "03d141d1f4",
+      "browser": "default"},
+    "hidden": {"name": ""},
+    "calculated": {"score": 1},
+    "answers":
+     [{"field":
+        {"id": "kwO3rR1F8jyL",
+         "ref": "01GJKYZ6JWX9WQSBZ73QBNCZ3K",
+         "type": "multiple_choice"},
+       "type": "choice",
+       "choice":
+        {"id": "Sz8XTBZIln3e",
+         "ref": "01GJKYZ6JW84ACPFFWQ2HP72Z7",
+         "label": "Theory"}},
+      {"field":
+        {"id": "iGQoOmvpyOal",
+         "ref": "9cde6927-a24b-4894-874f-76d534f51035",
+         "type": "picture_choice"},
+       "type": "choice",
+       "choice":
+        {"id": "DbrOMh5yB48V",
+         "ref": "ccebfad4-4b8c-4510-8cd7-149f24feb3a7",
+         "label": "Answering a question by using the internet"}},
+      {"field":
+        {"id": "MHhrZL25DRNx",
+         "ref": "45af6abb-f5ab-448e-8d3d-bda8a2b55cdc",
+         "type": "multiple_choice"},
+       "type": "choice",
+       "choice":
+        {"id": "axfUYyiwVN0O",
+         "ref": "24ccb738-5f74-4ef1-bb05-b291a961d4bf",
+         "label": "Do one task at a time until I finish"}},
+      {"field":
+        {"id": "be46RAfRZUI8",
+         "ref": "1fe9f909-35f0-4a78-93f0-9412769cf7c9",
+         "type": "picture_choice"},
+       "type": "choice",
+       "choice":
+        {"id": "2MTBGnH7aJ2r",
+         "ref": "2c781a67-676d-401f-a78c-7321a3420b33",
+         "label": "A thrilling and exciting action movie"}},
+      {"field":
+        {"id": "A30atak4EftX",
+         "ref": "7d5b49da-a58a-4b81-95cd-3d17575fe5a8",
+         "type": "multiple_choice"},
+       "type": "choice",
+       "choice":
+        {"id": "HX0eE5DM4fNO",
+         "ref": "5db6e15e-dbd0-4441-a050-3a252cc66ef0",
+         "label": "Admire it for its beauty"}},
+      {"field":
+        {"id": "RSjjdK42JtPm",
+         "ref": "1be337a2-532f-4b96-a6a1-024fc298dd86",
+         "type": "multiple_choice"},
+       "type": "choice",
+       "choice":
+        {"id": "XJ2Djcfj8vBb",
+         "ref": "e666f8e3-1d20-4d72-b519-be3c1be9b750",
+         "label": "Taste as I go and adjust"}},
+      {"field":
+        {"id": "qh08ssajc7CO",
+         "ref": "0bea6cee-7c82-460c-bce1-d21d3b59082a",
+         "type": "multiple_choice"},
+       "type": "choice",
+       "choice":
+        {"id": "ZXyO87iAiqWO",
+         "ref": "1df17d7b-90bc-408f-a7ed-de0eb20b7597",
+         "label": "Looking things up as I need answers to them"}},
+      {"field":
+        {"id": "H5XodAXBkEdj",
+         "ref": "2f1623f3-ccea-4af0-9e93-54c6e6c408b2",
+         "type": "multiple_choice"},
+       "type": "choice",
+       "choice":
+        {"id": "ofWftE0tw1TC",
+         "ref": "82154046-fc2e-4b80-b724-c65b8e709eaf",
+         "label": "Stories"}}],
+    "variables":
+     [{"key": "backend_developer", "type": "number", "number": 4},
+      {"key": "data_analyst", "type": "number", "number": 2},
+      {"key": "data_scientist", "type": "number", "number": 2},
+      {"key": "digital_consultant", "type": "number", "number": 2},
+      {"key": "frontend_developer", "type": "number", "number": 5},
+      {"key": "fullstack_developer", "type": "number", "number": 4},
+      {"key": "it_project_manager", "type": "number", "number": 4},
+      {"key": "product_manager", "type": "number", "number": 4},
+      {"key": "score", "type": "number", "number": 1},
+      {"key": "ux_ui_designer", "type": "number", "number": 2}]}]}
