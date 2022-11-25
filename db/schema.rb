@@ -10,16 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_23_080131) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_25_050356) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "assessments", force: :cascade do |t|
-    t.string "pers_type"
-    t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "courses", force: :cascade do |t|
     t.string "title"
@@ -53,13 +46,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_23_080131) do
   end
 
   create_table "recommendations", force: :cascade do |t|
-    t.integer "match_score"
-    t.bigint "assessment_id", null: false
-    t.bigint "pathway_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["assessment_id"], name: "index_recommendations_on_assessment_id"
-    t.index ["pathway_id"], name: "index_recommendations_on_pathway_id"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_recommendations_on_user_id"
   end
 
   create_table "recommended_courses", force: :cascade do |t|
@@ -69,6 +59,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_23_080131) do
     t.bigint "pathway_id", null: false
     t.index ["course_id"], name: "index_recommended_courses_on_course_id"
     t.index ["pathway_id"], name: "index_recommended_courses_on_pathway_id"
+  end
+
+  create_table "recommended_pathways", force: :cascade do |t|
+    t.integer "match_score"
+    t.bigint "recommendation_id", null: false
+    t.bigint "pathway_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pathway_id"], name: "index_recommended_pathways_on_pathway_id"
+    t.index ["recommendation_id"], name: "index_recommended_pathways_on_recommendation_id"
   end
 
   create_table "skill_categories", force: :cascade do |t|
@@ -83,17 +83,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_23_080131) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["skill_category_id"], name: "index_skills_on_skill_category_id"
-  end
-
-  create_table "user_answers", force: :cascade do |t|
-    t.integer "question_no"
-    t.integer "answer_no"
-    t.bigint "user_id", null: false
-    t.bigint "assessment_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["assessment_id"], name: "index_user_answers_on_assessment_id"
-    t.index ["user_id"], name: "index_user_answers_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -113,11 +102,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_23_080131) do
 
   add_foreign_key "pathway_skills", "pathways"
   add_foreign_key "pathway_skills", "skills"
-  add_foreign_key "recommendations", "assessments"
-  add_foreign_key "recommendations", "pathways"
+  add_foreign_key "recommendations", "users"
   add_foreign_key "recommended_courses", "courses"
   add_foreign_key "recommended_courses", "pathways"
+  add_foreign_key "recommended_pathways", "pathways"
+  add_foreign_key "recommended_pathways", "recommendations"
   add_foreign_key "skills", "skill_categories"
-  add_foreign_key "user_answers", "assessments"
-  add_foreign_key "user_answers", "users"
 end

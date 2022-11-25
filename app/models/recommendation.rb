@@ -1,6 +1,5 @@
 class Recommendation < ApplicationRecord
-  belongs_to :assessment
-  belongs_to :pathway
-  has_many :recommended_courses, through: :pathway
-  has_many :courses, through: :recommended_courses
+  belongs_to :user
+  has_many :recommended_pathways
+  has_many :pathways, through: :recommended_pathways
 end

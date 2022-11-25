@@ -4,9 +4,8 @@
 require "csv"
 
 # ******************* Clearing *******************
-# UserAnswer.destroy_all
-# Recommendation.destroy_all
-# Assessment.destroy_all
+RecommendedPathway.destroy_all
+Recommendation.destroy_all
 # UserSkills.destroy_all
 RecommendedCourse.destroy_all
 PathwaySkill.destroy_all
