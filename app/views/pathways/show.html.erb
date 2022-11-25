@@ -1,0 +1,29 @@
+<div class="container">
+  </div>
+    <h1><%= @pathway.name %></h1>
+    <h4>Category: <%= @pathway.category %></h4>
+    <h4>Average Yearly Salary: <%= @pathway.avg_salary %></h4>
+    <h4>Projected Job Growth: <%= @pathway.projected_growth %></h4>
+    <div>
+      <p><%= @pathway.description %></p>
+      <p><%= @pathway.suit_for %></p>
+    </div>
+    <div>
+      <h4>Job Roles:</h4>
+      <p><%= @pathway.job_roles %></p>
+    </div>
+    <div>
+      <h4>Recommended Courses:</h4>
+      <div>
+        <% @pathway.courses.each do |course| %>
+          <p><%=course.title %></p>
+          <p>Description: <%=course.description %></p>
+          <p>Rating: <%=course.rating %></p>
+          <%= link_to "Go to Course", course.url, class: "real-link" %>
+        <% end %>
+      </div>
+    </div>
+
+  <div>
+
+</div>
