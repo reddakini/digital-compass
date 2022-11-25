@@ -6,10 +6,11 @@ class PathwaysController < ApplicationController
   end
 
   def show
+    @pathway = Pathway.find(params[:id])
   end
 
 
   private
 
-  
+
 end

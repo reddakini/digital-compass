@@ -1,3 +1,17 @@
+ //------------- Real Links (like for recommended courses)
+
+ .real-link {
+  font-size: 16px;
+  text-decoration: underline;
+  color: #520049;
+    &:hover {
+      text-decoration: none;
+    }
+ }
+
+
+
+
  //------------- Links inside the buttons
 
  a {
