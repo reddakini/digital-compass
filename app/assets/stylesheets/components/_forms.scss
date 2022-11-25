@@ -2,12 +2,13 @@
 
 .background-yellow {
   background-color: $secondary;
+  height: 79vh;
 }
 
 .sign-up-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 100vh;
+  height: 79vh;
 }
 
 .sign-up-text {
@@ -42,8 +43,14 @@
 .form-signup {
   border-radius: 5px;
   width: 350px;
-  padding: 35px;
+  padding: 45px 35px 35px 35px;
   background-color: $alm-white;
+  font-size: 15px;
+  height: 400px;
+}
+
+.form-control {
+  margin-bottom: 20px;
 }
 
 .form-signup .form-label {
@@ -56,6 +63,8 @@
   background-color: $primary;
   border-radius: 5px;
   width: 100%;
+  font-size: 15px;
+  margin-bottom: 20px;
 }
 
 .sign-up-btn:hover {
@@ -69,6 +78,15 @@
   margin-top: 5px;
 }
 
+.form-actions-style {
+  text-decoration: underline;
+  margin-top: 5px;
+}
+
+.form-actions-style:hover {
+  text-decoration: none;
+}
+
 // ********************** Log in/Sign in form *********************
 
 .login-flex {
@@ -77,7 +95,7 @@
  }
 
 .login-form-and-heading {
-  margin-top: 35px;
+  margin-top: 80px;
   height: 50vh;
 }
 
@@ -85,8 +103,10 @@
   color: $primary;
   text-align: center;
   font-size: 3em;
+  margin-bottom: 10px;
 }
 
 .log-in-btn {
- margin-bottom: 10px;
+ margin-bottom: 20px;
+ margin-top: 20px;
 }

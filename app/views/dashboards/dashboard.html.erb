@@ -29,12 +29,93 @@
      <div class="just-line">
     </div>
 
-    <div class="class button-sec button-sec-profile">
+    <div class="class button-sec-simple button-sec-profile">
       <%= link_to "See all pathways", root_path %>
     </div>
 
   </div>
 
+  <%#=*************** DASHBOARD**********************  %>
+
   <div class="dashboard-content">
+    <div class="dashboard-header mt-5">
+      <div class="dashboard-heading">
+        <h1>Your dashboard</h1>
+      </div>
+      <div class="dashboard-header-button">
+      <div class="button-pri button-pri-dashboard">
+
+        <%= link_to "Take the quiz", root_path %>
+      </div>
+    </div>
+
+    </div>
+
+    <div class="tabs-content">
+      <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+          <button class="nav-link active" id="nav-overview-tab" data-bs-toggle="tab" data-bs-target="#nav-overview" type="button" role="tab" aria-controls="nav-overview" aria-selected="true">Overview</button>
+          <button class="nav-link" id="nav-results-tab" data-bs-toggle="tab" data-bs-target="#nav-results" type="button" role="tab" aria-controls="nav-results" aria-selected="false">Results</button>
+          <button class="nav-link" id="nav-skills-tab" data-bs-toggle="tab" data-bs-target="#nav-skills" type="button" role="tab" aria-controls="nav-skills" aria-selected="false">Skills</button>
+        </div>
+      </nav>
+
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-overview" role="tabpanel" aria-labelledby="nav-overview-tab">
+<div class="content-overview">
+          <div class="overview-first-line">
+            <div class="progress-chart">
+            <h2>Progress</h2>
+              <%= pie_chart @progress_chart, donut: true, colors: ["#716F35", "#DB9A8F"], legend: false, class: "donut-chart" %>
+
+            </div>
+
+            <div class="two-results">
+              <div class="two-results-heading">
+                <h2>Your results</h2>
+              </div>
+
+              <div class="two-result-cards">
+
+                <div class="result-card">
+                  <h2>DATA SCIENTIST</h2>
+                  <br>
+                  <h1>87%</h1>
+                  <div class="button-pri button-pri-profile">
+                   <%= link_to "More...",  pathway_path(Pathway.find_by(name: 'Data Scientist')) %>
+                  </div>
+                </div>
+                <div class="result-card">
+                  <h2>BACK-END DEVELOPER</h2>
+                  <br>
+                  <h1>76%</h1>
+                  <div class="button-pri button-pri-profile">
+                   <%= link_to "More...",  pathway_path(Pathway.find_by(name: 'BackEnd Developer')) %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="overview-second-line">
+            <div class="overview-skills">
+            <h2>And here you shouls see your skills once you fill it in! (And after we code it)</h2>
+            </div>
+            <div class="values-chart">
+              <%= pie_chart @result_chart, download: "progress-chart-pie-chart" %>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="tab-pane fade" id="nav-results" role="tabpanel" aria-labelledby="nav-results-tab">
+        <%= image_tag "screenshot-results.jpg", alt: "text", width: "80%" %>
+        </div>
+
+        <div class="tab-pane fade" id="nav-skills" role="tabpanel" aria-labelledby="nav-skills-tab">
+        <%= image_tag "screenshot-skills.jpg", alt: "text" %>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
