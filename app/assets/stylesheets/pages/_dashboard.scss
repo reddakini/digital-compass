@@ -15,8 +15,7 @@
   align-items: center;
   text-align: center;
   color: $primary;
-  border-radius: 0 0 50px 0;
-  box-shadow: 4px 0px 10px 0px #b4b4b4;
+  // border-radius: 0 0 10px 0;
 }
 
 .image-profile {
@@ -70,11 +69,12 @@
 }
 
 
+
+
 // ***************** dashboard content **************
 
 .dashboard-content {
-  // padding-left: 30px;
-  margin: 0 70px;
+  margin: 0 150px 0 70px;
 }
 
 .dashboard-header {
@@ -86,25 +86,19 @@
 .dashboard-heading h1 {
   font-family: $headers-font;
   color: $primary;
-  font-size: 46px;
 }
 
 .button-pri-dashboard {
   color: $alm-white;
   min-width: 230px;
-  margin-right: 40px;
   margin-top: 15px;
   font-size: 10px;
 }
 
-// .button-pri-dashboard a {
-//   color: greenyellow;
-// }
-
 .content-overview {
   // border: 1px solid yellow;
   display: grid;
-  grid-template-rows: 0.8fr 0.8fr;
+  grid-template-rows: 0.7fr 0.7fr;
   grid-gap: 50px;
   margin-bottom: 20px;
   color: $primary;
@@ -130,6 +124,13 @@
   padding: 10px 20px 20px 20px;
   border: 2px solid $primary;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress-chart h2 {
+  margin-bottom: 10px;
 }
 
 
@@ -187,6 +188,8 @@
   // border: 1px solid orange;
   border: 2px solid $primary;
   border-radius: 5px;
+  // box-shadow: 1px 1px 13px grey;
+  // background-color: #e9e9e9;
 }
 
 
@@ -195,7 +198,7 @@
   --bs-nav-link-padding-x: 4rem;
   --bs-nav-link-padding-y: 0.5rem;
   --bs-nav-link-font-weight: ;
-  --bs-nav-link-color: #6c757d;
+  --bs-nav-link-color: #7d868e;
   --bs-nav-link-hover-color: #520049;
   --bs-nav-link-disabled-color: #e0d15a;
 }
@@ -203,19 +206,20 @@
 .nav-tabs {
   --bs-nav-tabs-border-width: 2px;
   --bs-nav-tabs-border-color: #520049;
-  --bs-nav-tabs-border-radius: 2px;
+  --bs-nav-tabs-border-radius: 5px;
   --bs-nav-tabs-link-hover-border-color: #520049 #520049 #52004900;
   --bs-nav-tabs-link-active-color: #520049;
   --bs-nav-tabs-link-active-bg: #b5454500;
   --bs-nav-tabs-link-active-border-color: #520049 #520049 #ffffff;
   border-bottom: var(--bs-nav-tabs-border-width) solid var(--bs-nav-tabs-border-color);
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   font-size: 15px;
 }
 
+.nav-link {
+  margin-right: 1px;
+}
 
 .donut-chart {
-  width: 300px;
-  background-color: #e0d15a;
-  color: green;
+  text-align: center;
 }
