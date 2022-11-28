@@ -15,7 +15,8 @@ footer{
 
   a {
     text-decoration: none;
-    :hover {
+
+    &:hover {
       color: $secondary;
     }
   }
