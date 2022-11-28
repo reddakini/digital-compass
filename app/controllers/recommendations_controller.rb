@@ -12,6 +12,24 @@ class RecommendationsController < ApplicationController
     response = JSON.parse(response_serialized)
     items = response["items"]
     items_hash = items[0]
+    items_hash["variables"].each do |pathway_match_score|
+      next if pathway_match_score["key"] == "score"
+
+      found_pathway = find_pathway(pathway_match_score["key"])
+      new_recommended_pathway = RecommendedPathway.new(
+        pathway: found_pathway,
+        match_score: pathway_match_score["number"],
+        recommendation: @recommendation
+      )
+      new_recommended_pathway.save
+    end
+    sleep(3.0)
+    redirect_to dashboard_path
+  end
+
+  private
+
+  def find_pathway(search_pathway)
     translation_hash = {
       "backend_developer" => "BackEnd Developer",
       "data_analyst" => "Data Analyst",
@@ -23,17 +41,6 @@ class RecommendationsController < ApplicationController
       "product_manager" => "Product Manager",
       "ux_ui_designer" => "UX/UI Designer"
     }
-    items_hash["variables"].each do |pathway_match_score|
-      unless pathway_match_score["key"] == "score"
-        found_pathway = Pathway.find_by(name: translation_hash[pathway_match_score["key"]])
-        new_recommended_pathway = RecommendedPathway.new(
-          pathway: found_pathway,
-          match_score: pathway_match_score["number"],
-          recommendation: @recommendation
-        )
-        new_recommended_pathway.save
-      end
-    end
-    redirect_to dashboard_path
+    Pathway.find_by(name: translation_hash[search_pathway])
   end
 end
