@@ -1,39 +1,50 @@
 <div class="navbar navbar-expand-sm navbar-dc">
-  <div class="d-flex justify-space-between w-100 mx-5">
-      <div class="d-flex align-items-center w-100 ">
-        <%= link_to root_path, class: "navbar-brand" do %>
-          <%= image_tag "Digital Compass logo (1).png", width:"60px" %>
-        <% end %>
-        <div class="logo-text">
-          <p>DIGITAL</p>
-          <p>COMPASS</p>
-        </div>
+  <div class="d-flex justify-space-between w-100 mx-3">
+    <div class="d-flex align-items-center w-50">
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <%= image_tag "DigitalCompass logo wine.png" %>
+      <% end %>
+      <div class="logo-text">
+        <p>DIGITAL</p>
+        <p>COMPASS</p>
       </div>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    </div>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="d-flex align-items-center">
+      <% if user_signed_in? %>
+        <%= link_to root_path, class: "mx-2" do %>
+          <h5>Home</h5>
+        <% end %>
+        <%= link_to pathways_path, class: "mx-2" do %>
+          <h5>Explore pathways</h5>
+        <% end %>
+        <%= link_to dashboard_path, class: "mx-2" do %>
+          <h5>Dashboard</h5>
+        <% end %>
+        <%= link_to destroy_user_session_path, class: "mx-2" do %>
+          <h5>Log out</h5>
+        <% end %>
+        <!--
         <ul class="navbar-nav me-auto">
-          <% if user_signed_in? %>
-            <li class="nav-item dropdown">
-              <%= image_tag "more.png", class: "dropdown-toggle", width:"30px", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= link_to "Home", root_path, class: "dropdown-item" %>
-                <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
-                <%= link_to "Explore Paths", pathways_path, class: "dropdown-item" %>
-                <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
-              </div>
-            </li>
-          <% else %>
-            <li class="nav-item">
-              <%= link_to "Sign Up", new_user_registration_path, class: "nav-link btn-nav-signup me-3" %>
-            </li>
-            <li class="nav-item">
-              <%= link_to "Log In", new_user_session_path, class: "nav-link btn-nav-login" %>
-            </li>
-          <% end %>
+          <li class="nav-item dropdown">
+            <%= image_tag "more.png", class: "dropdown-toggle", width:"30px", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Home", root_path, class: "dropdown-item" %>
+              <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
+              <%= link_to "Explore Paths", pathways_path, class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
+            </div>
+          </li>
         </ul>
-      </div>
+        -->
+      <% else %>
+        <button class="button-pri me-3"><%= link_to "Sign Up", new_user_registration_path %></button>
+        <button class="button-sec me-3"><%= link_to "Log In", new_user_session_path %></button>
+      <% end %>
+    </div>
   </div>
 </div>

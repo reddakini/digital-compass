@@ -1,6 +1,7 @@
 .navbar-dc {
   justify-content: space-between;
-  background-color: $primary;
+  background-color: white;
+  border-bottom: $alm-white solid 2px;
 }
 
 .navbar-dc .navbar-collapse {
@@ -10,14 +11,13 @@
 .navbar-dc .navbar-brand img {
   width: 50px;
 }
+
 .nav-link {
   $body-color: $gray;
   text-decoration: none;
   $body-color: $gray;
   margin-right: 10px;
 }
-
-
 
 .btn-ghost {
   border-radius: 0px 10px 10px 0px;
@@ -26,11 +26,12 @@
 .logo-text {
   display: flex;
   flex-direction: column;
-
   p {
+    color: $primary;
     margin: 0px;
   }
 }
+
 .btn-nav-signup {
 position: relative;
 display: flex;
@@ -46,6 +47,7 @@ font-family: $body-font;
 font-size: 14px;
 width: 90px;
 }
+
 .btn-nav-login {
   position: relative;
   display: flex;
@@ -61,6 +63,7 @@ width: 90px;
   font-size: 14px;
   width: 90px;
   }
-  .dropdown-item {
-    font-size: 16px;
-  }
+
+.dropdown-item {
+  font-size: 16px;
+}
