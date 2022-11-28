@@ -74,28 +74,35 @@
         </div>
 
         <div class="tab-pane fade" id="nav-results" role="tabpanel" aria-labelledby="nav-results-tab">
-        <%= image_tag "screenshot-results.jpg", alt: "text", width: "80%" %>
+          <%= image_tag "screenshot-results.jpg", alt: "text", width: "80%" %>
         </div>
 
         <div class="tab-pane fade" id="nav-skills" role="tabpanel" aria-labelledby="nav-skills-tab">
         <%#= image_tag "screenshot-skills.jpg", alt: "text" %>
           <div class="slidecontainer">
-            <input type="range" min="0" max="5" value="0" class="slider" id="skillRrange">
+            <input type="range" min="0" max="3" value="0" class="slider" id="skillRrange">
           </div>
           <%#= simple_form_for @skills do |f| %>
             <%#= f.input :SKILLNAME, as: :boolean, input_html: { class: "toggle" } %>
           <%# end %>
 
-          <div class="custom-control custom-switch">
-            <input type="checkbox" class="custom-control-input" id="customSwitch1">
-            <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
-          </div>
-          <div class="custom-control custom-switch">
-            <input type="checkbox" class="custom-control-input" disabled id="customSwitch2">
-            <label class="custom-control-label" for="customSwitch2">Disabled switch element</label>
+          <%#= @user_skill.skill.name %>
+
+          <div class="button-pri">
+            <%= link_to "Add more...", new_user_skill_path %>
           </div>
 
 
+
+        </div>
+
+        <div class="tab-pane fade" id="nav-values" role="tabpanel" aria-labelledby="nav-values-tab">
+        <h3 class="pb-3">Workplace Values Assessment</h3>
+        <p>People expect to achieve certain ideals from their jobs employers and careers. These workplace values concepts and ideas that you hold dear have a direct impact on your satisfaction with your job with your career and even with your life. When you understand the values you cherish most highly you can make an evaluation about whether your current employer (or a prospective employer) supports those values. And if you are considering a career change understanding your values is critical to identifying a new career path.
+        </p>
+        <h3 class="py-3">How to proceed?</h3>
+        <p>1. Rate the importance of each of the workplace values on our list with the slider and click submit when you're done.<br>2. Reevaluate the list to identify the 10 most important values to you.<br>3. Now narrow down your list to the 5 core values you hold most sacred - that you can't live without in your job/workplace.</p>
+        <h4>Congratulations! You now have a list of core workplace value that represent who you are... it is this core group of workplace values that help determine your level of satisfaction with your job and your career - and which should be used to judge the level of "fit" with any future job company or career change.</h4>
         </div>
       </div>
     </div>

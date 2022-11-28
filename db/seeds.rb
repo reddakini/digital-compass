@@ -14,6 +14,7 @@ SkillCategory.destroy_all
 Course.destroy_all
 Pathway.destroy_all
 User.destroy_all
+Value.destroy_all
 
 # ******************* Users *******************
 puts "\n"
@@ -123,6 +124,21 @@ CSV.foreach(filepath, headers: :first_row) do |row|
   puts "------------------------------------"
 end
 puts "skill_categories, skills and pathway_skills seeded from db/skill.csv!"
+
+# ******************* Values *******************
+puts "\n"
+puts "\n"
+puts "------------------------------------------------------------------------"
+puts "Seeding values..."
+puts "\n"
+filepath = "db/csv/values.csv"
+CSV.foreach(filepath, headers: :first_row) do |row|
+  new_value = Value.new(name: row['v_name'])
+  new_value.save!
+  puts "#{new_value.name} seeded!"
+  puts "------------------------------------"
+end
+puts "values seeded from db/values.csv!"
 
 # ******************* Further Seeds after here *******************
 puts "\n"
