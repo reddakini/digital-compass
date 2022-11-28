@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   resources :pathways, only: [:index, :show]
   resources :user_skills, only: [:new, :create]
+  resources :user_values, only: [:new, :create]
 
   get "/dashboard", to: "dashboards#dashboard"
   get "/assessment", to: "pages#assessment"
