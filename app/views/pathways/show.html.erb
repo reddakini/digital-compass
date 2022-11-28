@@ -1,9 +1,9 @@
 <div class="container banana">
   <div class="my-5 py-5">
-    <h1 class="mb-5 title-path-border"><%= @pathway.name %></h1>
+    <h2 class="mb-5 title-path-border"><%= @pathway.name %></h2>
     <%# <h4>Category: <%= @pathway.category %></h4>
-    <h3>Average Yearly Salary:  Fr. <%= @pathway.avg_salary %></h3>
-    <h3 class="pt-3">Projected Job Growth: <%= @pathway.projected_growth %></h3>
+    <h4>Average Yearly Salary:  Fr. <%= @pathway.avg_salary %></h4>
+    <h4 class="pt-3">Projected Job Growth: <%= @pathway.projected_growth %></h4>
   </div>
   <div>
    <%= image_tag "woman-coding.jpg", class: "img-thumbnail float-end ms-5" %>
@@ -13,19 +13,19 @@
     </div>
   </div>
   <div>
-    <h2 class="my-5">Possible Job Roles:</h2>
+    <h3 class="my-5">Possible Job Roles:</h3>
     <p><%= @pathway.job_roles %></p>
   </div>
   <div>
-    <h2 class="my-5">Recommended Courses:</h2>
+    <h3 class="my-5">Recommended Courses:</h3>
     <div class="grid mb-5">
       <% @pathway.courses.each do |course| %>
-        <div class="result-card pathway_course_bg p-5">
-          <h3 class="mb-5"><%=course.title %></h3>
-          <p class="text-center"><%=course.description %></p>
+        <div class="result-card pathway_course_bg p-5 text-center">
+          <h4 class="mb-5"><%=course.title %></h4>
+          <p><%=course.description %></p>
           <div class="d-flex justify-content-between ratingandlink">
             <p><strong>Rating:</strong> <%=course.rating %></p>
-            <%= link_to "Go to Course", course.url, class: "real-link" %>
+            <%= link_to "Go to Course", course.url, class: "real-link", target: :_blank %>
           </div>
         </div>
       <% end %>
