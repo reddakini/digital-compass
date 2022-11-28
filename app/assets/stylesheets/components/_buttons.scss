@@ -58,7 +58,7 @@
   padding: 11px 18px;
   color: #fff;
   font-size: 1.9em;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: 0.14em;
   z-index: 20;
   transition: all 0.3s ease-in-out;
@@ -97,42 +97,39 @@
   position: relative;
   overflow: hidden;
   border: 2px solid var(--color);
-  transition: color .5s;
   z-index: 1;
   font-size: 17px;
   border-radius: 3px;
   font-weight: 500;
   color: var(--color);
- }
 
- .button-sec:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  background: var(--color);
-  height: 150px;
-  width: 200px;
-  border-radius: 50%;
- }
+    &:before {
+    position: absolute;
+    content: "";
+    background: var(--color);
+    height: 150px;
+    width: 200px;
+    z-index: -1;
+    border-radius: 50%;
+  }
 
- .button-sec:hover {
-  color: #fff;
- }
+    &:hover {
+    color: white !important;
+      &:before {
+        top: -30px;
+        left: -30px;
+      }
 
- .button-sec:before {
-  top: 100%;
-  left: 100%;
-  transition: all .7s;
- }
+      a {
+        color: white !important;
+      }
+  }
 
- .button-sec:hover:before {
-  top: -30px;
-  left: -30px;
+    &:before {
+    top: 100%;
+    left: 100%;
+    transition: .5s all;
  }
-
- .button-sec:active:before {
-  background: #3a0ca3;
-  transition: background 0s;
  }
 
   //------------- Ghost Button NO animation
