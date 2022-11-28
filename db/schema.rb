@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_25_074423) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_28_025245) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -85,6 +85,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_25_074423) do
     t.index ["skill_category_id"], name: "index_skills_on_skill_category_id"
   end
 
+  create_table "user_skills", force: :cascade do |t|
+    t.integer "mastery_level"
+    t.boolean "learning_interest"
+    t.boolean "validated"
+    t.bigint "skill_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["skill_id"], name: "index_user_skills_on_skill_id"
+    t.index ["user_id"], name: "index_user_skills_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -108,4 +120,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_25_074423) do
   add_foreign_key "recommended_pathways", "pathways"
   add_foreign_key "recommended_pathways", "recommendations"
   add_foreign_key "skills", "skill_categories"
+  add_foreign_key "user_skills", "skills"
+  add_foreign_key "user_skills", "users"
 end
