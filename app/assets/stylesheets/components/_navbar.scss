@@ -1,6 +1,7 @@
 .navbar-dc {
   justify-content: space-between;
-  background-color: $primary;
+  background-color: white;
+  border-bottom: $alm-white solid 2px;
 }
 
 .navbar-dc .navbar-collapse {
@@ -10,14 +11,13 @@
 .navbar-dc .navbar-brand img {
   width: 50px;
 }
+
 .nav-link {
   $body-color: $gray;
   text-decoration: none;
   $body-color: $gray;
   margin-right: 10px;
 }
-
-
 
 .btn-ghost {
   border-radius: 0px 10px 10px 0px;
@@ -26,41 +26,52 @@
 .logo-text {
   display: flex;
   flex-direction: column;
-
   p {
+    color: $primary;
     margin: 0px;
   }
 }
-.btn-nav-signup {
-position: relative;
-display: flex;
-justify-content: center;
-align-items: center;
-border-radius: 5px;
-background: #E7C258;
-overflow: hidden;
-text-decoration: none;
-color: white;
-padding: 5px 12px;
-font-family: $body-font;
-font-size: 14px;
-width: 90px;
+
+.nav-links a {
+  font-size: 16px;
 }
-.btn-nav-login {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 5px;
-  background: $alm-white;
-  overflow: hidden;
-  text-decoration: none;
-  color: $primary;
-  padding: 5px 12px;
-  font-family: $body-font;
-  font-size: 14px;
-  width: 90px;
-  }
-  .dropdown-item {
-    font-size: 16px;
-  }
+
+.nav-links a:hover {
+  color: $secondary;
+}
+
+// .btn-nav-signup {
+// position: relative;
+// display: flex;
+// justify-content: center;
+// align-items: center;
+// border-radius: 5px;
+// background: #E7C258;
+// overflow: hidden;
+// text-decoration: none;
+// color: white;
+// padding: 5px 12px;
+// font-family: $body-font;
+// font-size: 14px;
+// width: 90px;
+// }
+
+// .btn-nav-login {
+//   position: relative;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   border-radius: 5px;
+//   background: $alm-white;
+//   overflow: hidden;
+//   text-decoration: none;
+//   color: $primary;
+//   padding: 5px 12px;
+//   font-family: $body-font;
+//   font-size: 14px;
+//   width: 90px;
+//   }
+
+// .dropdown-item {
+//   font-size: 16px;
+// }

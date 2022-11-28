@@ -1,5 +1,6 @@
 .home-section-2 {
   margin-bottom: 30px;
+  background-color: $alm-white;
 }
 
 .cards {
@@ -8,6 +9,7 @@
 }
 
 .how-to-card {
+  text-align: center;
  .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -20,8 +22,5 @@
   }
 .cards {
     grid-template-columns: 1fr 1fr;
-  }
-h3 {
-    text-align: center;
   }
 }

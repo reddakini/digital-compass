@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="my-5 py-5">>
-    <h1 class="text-center">Future-proof your career by getting into Tech</h1>
+  <div>
+    <h2 class="my-5 py-5 text-center">Future-proof your career by getting into Tech</h2>
   </div>
 
   <div class="container mb-5">
@@ -11,7 +11,7 @@
     So, these are great times to consider a career change or a lateral entry into Tech.
     If you are still not sure which path may be the best for you, make sure to <%= link_to "sign-up", new_user_registration_path, class: "real-link" %>  and start by taking our assessment.</p>
   </div>
-  <h2 class="my-5 py-5"> Check out the following Tech career pathways:</h2>
+  <h3 class="my-5 py-5"> Check out the following Tech career pathways:</h3>
     <div class="grid">
       <% @pathways.each do |pathway| %>
         <%= render "shared/path_card", pathway: pathway %>

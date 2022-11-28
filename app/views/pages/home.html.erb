@@ -1,27 +1,24 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.pexels.com/photos/3727459/pexels-photo-3727459.jpeg);">
   <div class="container">
     <h1><span data-controller="typed-js"></span></h1>
-    <p class="mt-4">We help you find out which is the best career in Technology for you. <br> Change your life, future-proof your career and get started today!!</p>
+    <p class="mt-4">We help you find out which is the best career in Technology for you.<br>Change your life, future-proof your career and get started today!!</p>
     <% if user_signed_in? %>
       <button class="button-pri mt-5"><%= link_to "Get Started", assessment_path %></button>
     <% else %>
-      <button class="button-pri mt-5"><%= link_to "Let's do this!", new_user_registration_path%> </button>
-      <%#= link_to "Let's do this!", new_user_registration_path, class: "button-pri"%>
+      <button class="button-pri mt-5"><%= link_to "Let's do this!", new_user_registration_path%></button>
     <% end %>
   </div>
 </div>
 
+<%= render "howto" %>
 <div class="container">
-  <%= render "howto" %>
-  
   <div>
-    <h2 class="my-3 py-5"> Explore the most in-demand career pathways in Technology</h2>
+    <h2 class="my-5 py-5">Explore the most in-demand career pathways in Technology</h2>
   </div>
 
   <div class="grid">
     <% @pathways.each do |pathway| %>
       <%= render "shared/path_card", pathway: pathway %>
     <% end %>
-    <%#= render "shared/path_card" %>
   </div>
 </div>
