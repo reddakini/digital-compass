@@ -1,28 +1,33 @@
 <footer class="footer">
   <div>
     <nav class="round">
-      <ul class="footer-links">
+      <ul class="footer-links d-flex justify-content-between align-items-center">
         <li>
           <h4>about the app</h4>
+          <div class="about-text">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus maiores quasi temporibus dignissimos est quibusdam quidem, nemo ab fugit tenetur fugiat earum delectus reprehenderit odit possimus eius magnam dicta eligendi.</p>
+          </div>
         </li>
         <li>
           <%= link_to "https://www.linkedin.com/company/she-explores-tech/" do %>
             <img alt="LinkedIn" style="width: 25px; height: 25px; object-fit: cover;" fetchpriority="high" src="https://static.wixstatic.com/media/aa0402eb9ba2430d9d0620b59556efca.png/v1/fill/w_25,h_25,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/aa0402eb9ba2430d9d0620b59556efca.png">
           <% end %>
-          </li>
-          <li>
+        </li>
+        <li>
           <%= link_to "https://www.instagram.com/sheexplorestech/" do %>
           <img alt="Instagram" style="width: 25px; height: 25px; object-fit: cover;" fetchpriority="high" src="https://static.wixstatic.com/media/e1aa082f7c0747168d9cf43e77046142.png/v1/fill/w_25,h_25,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/e1aa082f7c0747168d9cf43e77046142.png">          <% end %>
         </li>
         <li>
-          <h4>Quick links</h4>
-          <div class="d-flex flex-column">
-            <%= link_to "Contact us", "#" %>
+          <h4>quick links</h4>
+          <div class="d-flex flex-column align-items-end">
             <%= link_to "Home", root_path %>
+            <%= link_to "Dashboard", dashboard_path %>
+            <%= link_to "Explore Pathways", pathways_path %>
+            <%= link_to "Contact us", "#" %>
+            <%= link_to "Log Out", destroy_user_session_path, data: { "turbo-method": :delete } %>
           </div>
         </li>
       </ul>
     </nav>
   </div>
 </footer>
-<%# <img alt="Instagram" style="width: 25px; height: 25px; object-fit: cover;" fetchpriority="high" src="https://static.wixstatic.com/media/e1aa082f7c0747168d9cf43e77046142.png/v1/fill/w_25,h_25,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/e1aa082f7c0747168d9cf43e77046142.png"> %>

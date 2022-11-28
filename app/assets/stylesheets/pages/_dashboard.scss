@@ -1,68 +1,68 @@
 
-// ***************** profile sidebar **************
+// // ***************** profile sidebar **************
 
-.profile-sidebar {
-  background-color: #FAF2DA;
-  position: sticky;
-  top: 0px;
-  height: 90vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  color: $primary;
-  // border-radius: 0 0 10px 0;
-}
+// .profile-sidebar {
+//   background-color: #FAF2DA;
+//   position: sticky;
+//   top: 0px;
+//   height: 90vh;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   text-align: center;
+//   color: $primary;
+//   // border-radius: 0 0 10px 0;
+// }
 
-.image-profile {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  margin-top: 40px;
-  margin-bottom: 15px;
-}
+// .image-profile {
+//   width: 120px;
+//   height: 120px;
+//   border-radius: 50%;
+//   margin-top: 40px;
+//   margin-bottom: 15px;
+// }
 
-.name-title h3 {
-  font-size: 2.2em;
-}
+// .name-title h3 {
+//   font-size: 2.2em;
+// }
 
-.name-title p {
-  font-size: 1.5em;
-  margin-bottom: 0;
-}
+// .name-title p {
+//   font-size: 1.5em;
+//   margin-bottom: 0;
+// }
 
-.just-line {
-  height: 2px;
-  background-color: $primary;
-  width: 80%;
-  border-radius: 80%;
-  margin: 25px 0 25px 0;
-}
+// .just-line {
+//   height: 2px;
+//   background-color: $primary;
+//   width: 80%;
+//   border-radius: 80%;
+//   margin: 25px 0 25px 0;
+// }
 
-.recommended-courses h4 {
-  text-transform: uppercase;
-  font-weight: bold;
-}
+// .recommended-courses h4 {
+//   text-transform: uppercase;
+//   font-weight: bold;
+// }
 
-.recommended-courses p {
-  font-size: 1.5em;
-  line-height: 3em;
-}
+// .recommended-courses p {
+//   font-size: 1.5em;
+//   line-height: 3em;
+// }
 
-.button-pri-profile {
-  width: 80%;
-  height: 4.5em;
-  margin: 10px 0 5px 0;
-}
+// .button-pri-profile {
+//   width: 80%;
+//   height: 4.5em;
+//   margin: 10px 0 5px 0;
+// }
 
-.button-pri-profile a {
-  font-size: 17px;
-  font-weight: normal;
-}
+// .button-pri-profile a {
+//   font-size: 17px;
+//   font-weight: normal;
+// }
 
-.button-sec-profile {
-  width: 80%;
-}
+// .button-sec-profile {
+//   width: 80%;
+// }
 
 
 

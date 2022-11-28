@@ -74,26 +74,30 @@
         </div>
 
         <div class="tab-pane fade" id="nav-results" role="tabpanel" aria-labelledby="nav-results-tab">
-        <%= image_tag "screenshot-results.jpg", alt: "text", width: "80%" %>
+          <%= image_tag "screenshot-results.jpg", alt: "text", width: "80%" %>
         </div>
 
         <div class="tab-pane fade" id="nav-skills" role="tabpanel" aria-labelledby="nav-skills-tab">
-        <%#= image_tag "screenshot-skills.jpg", alt: "text" %>
-          <div class="slidecontainer">
-            <input type="range" min="0" max="5" value="0" class="slider" id="skillRrange">
-          </div>
+
           <%#= simple_form_for @skills do |f| %>
             <%#= f.input :SKILLNAME, as: :boolean, input_html: { class: "toggle" } %>
           <%# end %>
+<div class="thisisstupid">
+          <% @user_skills.each do |skill| %>
+            <div class="one-skill-row">
+              <h3><%= skill.name %></h3>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="3" value="0" class="slider" id="skillRrange">
+              </div>
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+          <% end %>
+</div>
 
-          <div class="custom-control custom-switch">
-            <input type="checkbox" class="custom-control-input" id="customSwitch1">
-            <label class="custom-control-label" for="customSwitch1">Toggle this switch element</label>
+          <div class="button-pri">
+            <%= link_to "Add more...", new_user_skill_path %>
           </div>
-          <div class="custom-control custom-switch">
-            <input type="checkbox" class="custom-control-input" disabled id="customSwitch2">
-            <label class="custom-control-label" for="customSwitch2">Disabled switch element</label>
-          </div>
+
 
 
         </div>

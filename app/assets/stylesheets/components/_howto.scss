@@ -5,22 +5,14 @@
 
 .cards {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .how-to-card {
   text-align: center;
- .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+
   img {
     width: 200px;
     height: 300px;
-  }
-.cards {
-    grid-template-columns: 1fr;
-  }
-.cards {
-    grid-template-columns: 1fr 1fr;
   }
 }
