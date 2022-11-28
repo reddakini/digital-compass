@@ -72,7 +72,6 @@
 // ***************** dashboard content **************
 
 .dashboard-content {
-  // padding-left: 30px;
   margin: 0 150px 0 70px;
 }
 
@@ -85,13 +84,11 @@
 .dashboard-heading h1 {
   font-family: $headers-font;
   color: $primary;
-  font-size: 46px;
 }
 
 .button-pri-dashboard {
   color: $alm-white;
   min-width: 230px;
-  // margin-right: 40px;
   margin-top: 15px;
   font-size: 10px;
 }
