@@ -33,6 +33,7 @@
   // box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   border: none;
+  width: fit-content;
  }
 
  .button-pri:after {
@@ -54,7 +55,7 @@
  .button-pri a {
   text-align: center;
   text-decoration: none;
-  width: 100%;
+  // width: 100%;
   padding: 11px 18px;
   color: #fff;
   font-size: 1.9em;

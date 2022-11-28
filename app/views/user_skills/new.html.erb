@@ -4,7 +4,8 @@
     <%= f.association :skill,
                       as: :check_boxes,
                       input_html: { class: "tag-selector" },
-                      item_wrapper_class: 'tag-item' %>
+                      item_wrapper_class: 'tag-item',
+                      checked: lambda { |skill| current_user.skills.include? skill } %>
     <div class="button-position">
        <%= f.button :submit, 'Save', class: "button-sec" %>
     </div>
