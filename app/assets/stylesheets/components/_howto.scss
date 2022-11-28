@@ -1,0 +1,27 @@
+.home-section-2 {
+  margin-bottom: 30px;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+}
+
+.how-to-card {
+ .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  img {
+    width: 200px;
+    height: 300px;
+  }
+.cards {
+    grid-template-columns: 1fr;
+  }
+.cards {
+    grid-template-columns: 1fr 1fr;
+  }
+h3 {
+    text-align: center;
+  }
+}
