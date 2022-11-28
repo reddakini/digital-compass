@@ -4,18 +4,12 @@ class UserSkillsController < ApplicationController
   end
 
   def create
+    UserSkill.destroy_all
     selected_skills = params[:user_skill][:skill_id]
-
-    # clear the user skills
-    #selected_skills.destroy_all
     selected_skills.each do |skill|
       @user_skill = UserSkill.create(skill_id: skill, user_id: current_user.id) if skill != ""
     end
-    redirect_to dashboard_path
-  end
-
-  def show
-    @user_skill = UserSkill.find(params[:id])
+    redirect_to dashboard_path(tab: "nav-skills")
   end
 
   private

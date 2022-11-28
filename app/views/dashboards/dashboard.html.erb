@@ -78,15 +78,21 @@
         </div>
 
         <div class="tab-pane fade" id="nav-skills" role="tabpanel" aria-labelledby="nav-skills-tab">
-        <%#= image_tag "screenshot-skills.jpg", alt: "text" %>
-          <div class="slidecontainer">
-            <input type="range" min="0" max="3" value="0" class="slider" id="skillRrange">
-          </div>
+
           <%#= simple_form_for @skills do |f| %>
             <%#= f.input :SKILLNAME, as: :boolean, input_html: { class: "toggle" } %>
           <%# end %>
-
-          <%#= @user_skill.skill.name %>
+<div class="thisisstupid">
+          <% @user_skills.each do |skill| %>
+            <div class="one-skill-row">
+              <h3><%= skill.name %></h3>
+              <div class="slidecontainer">
+                <input type="range" min="0" max="3" value="0" class="slider" id="skillRrange">
+              </div>
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+          <% end %>
+</div>
 
           <div class="button-pri">
             <%= link_to "Add more...", new_user_skill_path %>
