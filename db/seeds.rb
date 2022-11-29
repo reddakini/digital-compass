@@ -119,10 +119,15 @@ puts "Seeding skill_categories, skills and pathway_skills..."
 puts "\n"
 filepath = "db/csv/skills.csv"
 CSV.foreach(filepath, headers: :first_row) do |row|
-  new_skill_category = SkillCategory.new(
-    name: row['sk_category']
-  )
-  new_skill_category.save!
+  new_skill_category = SkillCategory.find_by(name: row['sk_category'])
+  if new_skill_category.nil?
+    new_skill_category = SkillCategory.new(
+      name: row['sk_category']
+    )
+    new_skill_category.save!
+    puts "Skill category #{new_skill_category.name} seeded!"
+    puts "------------------------------------"
+  end
 
   new_skill = Skill.new(
     name: row['sk_skill'],
