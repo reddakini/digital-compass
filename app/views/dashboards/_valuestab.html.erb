@@ -2,42 +2,45 @@
   <h3 class="pb-3">Workplace Values Assessment</h3>
   <p>People expect to achieve certain ideals from their jobs employers and careers. These workplace values concepts and ideas that you hold dear have a direct impact on your satisfaction with your job with your career and even with your life. When you understand the values you cherish most highly you can make an evaluation about whether your current employer (or a prospective employer) supports those values. And if you are considering a career change understanding your values is critical to identifying a new career path.</p>
 </div>
-<div>
-  <p>1️. Rate the degree of importance that you place on each of the following workplace values with the corresponding slider, using this scale:</p>
+<div class="ms-3 my-5">
+  <p>1️. - Rate the degree of importance that you place on each of the following workplace values, using this scale:</p>
   <div class="ms-5">
-    <p>0 = Not important to me at all → 3 = Very important to me</p>
+   <ul><p><strong>0 = Not important to me at all → 5 = Very important to me</p></strong></ul>
   </div>
-  <p>2️. Click Submit</p>
+  <p>2️. - Double check which are your top rated values (those with 4 and 5 stars) and try to reduce them to maximum 5 -- only the ones you really cannot live without.</p>
+  <p>3. - Click on Submit to save your selection.</p>
 </div>
 
-
-<div class="my-5 py-3">
-  <h5 class="pb-3">I am interested in jobs and careers that include...</h5>
-  <%= simple_form_for @user_value do |f| %>
-    <% Value.all.each do |value| %>
-      <div class="row">
-        <div class="col-5">
-          <label for="customRange3" class="form-label"><p><%=value.name%></p></label>
+<div class="row my-5 py-3">
+<h4 class="pb-3">I am interested in jobs and careers that include...</h4>
+  <% if @user_values.empty? %>
+    <%= simple_form_for @user_value do |f| %>
+      <% Value.all.each do |value| %>
+        <div class="value">
+          <p><%= f.input :importance,
+                        collection: (1..5).to_a,
+                        label: "#{value.name}",
+                        input_html: {data: {controller: "star-rating"}, name: "user_value[value][#{value.id}]"}%></p>
         </div>
-        <div class="col-3">
-          0<input type="range" class="form-range" value="0" min="0" max="3" step="1" id="customRange3" name="user_value[value][<%= value.id %>]">
-        </div>
-      </div>
+      <% end %>
+      <%= f.button :submit, "Submit", class: "button-sec" %>
     <% end %>
-
-    <%= f.button :submit, 'Submit', class: "button-sec" %>
+  <% else %>
+    <%= simple_form_for @user_value do |f| %>
+      <% Value.all.each do |value| %>
+        <div class="value">
+          <p><%= f.input :importance,
+                        collection: (0..5).to_a,
+                        label: "#{value.name}",
+                        selected: @user_values.find_by(value: value) ? @user_values.find_by(value: value).importance : 0,
+                        input_html: {data: {controller: "star-rating"}, name: "user_value[value][#{value.id}]"}%></p>
+        </div>
+      <% end %>
+      <%= f.button :submit, "Submit", class: "button-sec" %>
+    <% end %>
   <% end %>
 </div>
 
-<p><strong>Congratulations!</strong> You now have a list of core workplace value that represent who you are... it is this core group of workplace values that help determine your level of satisfaction with your job and your career - and which should be used to judge the level of "fit" with any future job company or career change.</p>
 
- <div class="row">
-    <div class="col-xs-4">
-      <%= simple_form_for @user_value do |f| %>
-        <% Value.all.each do |value| %>
-          <p><%= f.input :importance, collection: (1..5).to_a, label: "#{value.name}", input_html: {data: {controller: "star-rating"}}, name: "user_value[value][#{value.id}]"%></p>
-        <% end %>
-        <%= f.button :submit, "Submit", class: "button-sec" %>
-      <% end %>
-    </div>
-  </div>
+<h3 class="my-3 py-3">Congratulations!</h3>
+<p>You now have a list of core workplace value that represent who you are... it is this core group of workplace values that help determine your level of satisfaction with your job and your career - and which should be used to judge the level of "fit" with any future job company or career change.</p>

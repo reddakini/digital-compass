@@ -12,6 +12,14 @@
   p {
     font-size: 10px;
   }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      color: $secondary;
+    }
+  }
 }
 
 .social-links {

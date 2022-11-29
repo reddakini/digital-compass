@@ -22,9 +22,8 @@
           <div class="content-overview">
             <div class="overview-first-line">
               <div class="progress-chart">
-              <h3>Progress</h3>
+                <h3>Progress</h3>
                 <%= pie_chart @progress_chart, donut: true, colors: ["#716F35", "#DB9A8F", "#ECCC6E"], legend: false, class: "donut-chart", height: "250px", width: "250px" %>
-
               </div>
 
               <div class="two-results">
@@ -39,7 +38,7 @@
                     <br>
                     <h1>87%</h1>
                     <div class="button-sec">
-                    <%= link_to "More >",  pathway_path(Pathway.find_by(name: 'Data Scientist')) %>
+                      <%= link_to "More >",  pathway_path(Pathway.find_by(name: 'Data Scientist')) %>
                     </div>
                   </div>
                   <div class="result-card">
@@ -47,7 +46,7 @@
                     <br>
                     <h1>76%</h1>
                     <div class="button-sec">
-                    <%= link_to "More >",  pathway_path(Pathway.find_by(name: 'BackEnd Developer')) %>
+                      <%= link_to "More >",  pathway_path(Pathway.find_by(name: 'BackEnd Developer')) %>
                     </div>
                   </div>
                 </div>
@@ -56,10 +55,15 @@
 
             <div class="overview-second-line" id="test">
               <div class="overview-skills">
-              <h3>Your skills</h3>
+                <h3>Your skills</h3>
+
               </div>
               <div class="values-chart">
-                <%= pie_chart @result_chart, download: "progress-chart-pie-chart", colors: ["#6E184F", "#716F35", "#DB9A8F", "#ECCC6E", "#A66940", "#F2E9E1", "#FCE8D2", "#E9E9E9", "#0E1251"] %>
+                <h3>Your Top 5 Work Values</h3>
+                <% @user_values.where("importance >= 4").each do |uv| %>
+                  <p><%= uv.value.name, class: "value-stack" %></p>
+                <% end %>
+                <%#= bar_chart @user_values, download: "bar-chart", colors: ["#6E184F", "#716F35", "#DB9A8F", "#ECCC6E", "#A66940", "#F2E9E1", "#FCE8D2", "#E9E9E9", "#0E1251"] %>
               </div>
             </div>
           </div>
