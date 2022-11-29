@@ -4,10 +4,29 @@ class UserSkillsController < ApplicationController
   end
 
   def create
-    current_user.user_skills.destroy_all
-    selected_skills = params[:user_skill][:skill_id]
-    selected_skills.each do |skill|
-      @user_skill = UserSkill.create(skill_id: skill, user_id: current_user.id) if skill != ""
+
+    selected_skills = params[:user_skill][:skill_id].map { |id| id.to_i }.reject { |id| id == 0 }
+
+    ids_to_create = selected_skills - current_user.skill_ids
+    ids_to_destroy = current_user.skill_ids - selected_skills
+
+    ids_to_create.each do |skill_id|
+      @user_skill = UserSkill.create(skill_id: skill_id, user_id: current_user.id)
+    end
+
+    ids_to_destroy.each do |skill_id|
+      @user_skill = UserSkill.find_by(skill_id: skill_id, user_id: current_user.id)
+      @user_skill.destroy
+    end
+
+    redirect_to dashboard_path(tab: "Skills")
+  end
+
+  def update_level
+    levels = params[:user_skill][:mastery_level]
+    levels.each do |id, mastery_level|
+      @user_skill = UserSkill.find_by(skill_id: id, user_id: current_user.id)
+      @user_skill.update(mastery_level: mastery_level)
     end
     redirect_to dashboard_path(tab: "Skills")
   end

@@ -1,15 +1,30 @@
-        <div class="skills-table">
-          <% @user_skills.each do |skill| %>
-            <div class="one-skill-row">
-              <p><%= skill.name %></p>
-              <div class="col-3 slider-simple">
-                0<input type="range" class="form-range" value="0" min="0" max="3" step="1" id="customRange3" name="[<%= skill.name %>]">
-              </div>
-              <i class="fa-solid fa-book-open"></i>
-            </div>
-          <% end %>
-        </div>
+<div class="skills-table" data-controller="skills-slider">
+  <div class="headers-skills">
+    <p>Skill</p>
+    <p>Your level</p>
+    <p>Learning interest</p>
+  </div>
 
-          <div class="button-pri">
-            <%= link_to "Add more...", new_user_skill_path %>
+  <%= simple_form_for @user_skill, url: update_level_path, method: :patch do |f| %>
+
+
+    <% @user_skills.each do |skill| %>
+      <% user_skill = current_user.user_skills.find_by(skill: skill) %>
+      <div class="one-skill-row">
+          <p><%= skill.name %></p>
+          <div class="col-3 slider-simple">
+            <input type="range" class="form-range" value="<%= user_skill ? user_skill.mastery_level : 0 %>" min="0" max="3" step="1" data-id="<%= skill.id %>" data-action="change->skills-slider#sliderValue" name="user_skill[mastery_level][<%= skill.id %>]">
           </div>
+          <span id="value-<%= skill.id %>" class="selected_value"><%= user_skill ? user_skill.mastery_level : 0 %></span>
+          <i class="fa-solid fa-book-open"></i>
+        </div>
+      <% end %>
+    <%= f.submit 'Save' %>
+ <% end %>
+</div>
+
+<div class="button-add-skills">
+  <div class="button-pri">
+    <%= link_to "Add more...", new_user_skill_path %>
+  </div>
+</div>

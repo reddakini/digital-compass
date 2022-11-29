@@ -8,7 +8,12 @@ class UserValuesController < ApplicationController
     # clear the user values
     #selected_values.destroy_all
     values.each do |id, importance|
-      @user_value = UserValue.create(value_id: id, user_id: current_user.id, importance: importance)
+      existing = UserValue.find_by(value_id: id, user_id: current_user.id)
+      if existing
+        existing.update(importance: importance)
+      else
+        @user_value = UserValue.create(value_id: id, user_id: current_user.id, importance: importance)
+      end
     end
     redirect_to dashboard_path
   end
