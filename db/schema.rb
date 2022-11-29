@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_28_075247) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_28_094818) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookmarks", force: :cascade do |t|
+    t.text "note"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.bigint "pathway_id", null: false
+    t.index ["pathway_id"], name: "index_bookmarks_on_pathway_id"
+    t.index ["user_id"], name: "index_bookmarks_on_user_id"
+  end
 
   create_table "courses", force: :cascade do |t|
     t.string "title"
@@ -128,6 +138,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_075247) do
     t.string "name"
   end
 
+  add_foreign_key "bookmarks", "pathways"
+  add_foreign_key "bookmarks", "users"
   add_foreign_key "pathway_skills", "pathways"
   add_foreign_key "pathway_skills", "skills"
   add_foreign_key "recommendations", "users"
