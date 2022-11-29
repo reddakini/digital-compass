@@ -1,17 +1,26 @@
-footer{
-  justify-content: space-between;
+.footer {
   background: white;
-  border-top: $alm-white solid 2px;
+  box-shadow: 0 -2px 4px 0 rgba(82,0,72,.2);
   flex-grow: 1;
-  height: 85px;
-  margin-top: 50px;
-  margin-bottom: 20px;
-  padding: 30px 50px 50px 50px;
+  padding: 50px 25px 30px 25px;
+  margin-top: 100px;
 }
 
-.footer-links {
-  padding-left: 0px !important;
-  list-style: none;
+.about-app {
+  width: 300px;
+
+  p {
+    font-size: 10px;
+  }
+}
+
+.social-links {
+  width: 60px;
+}
+
+.quick-links {
+  width: 300px;
+  text-align: end;
 
   a {
     text-decoration: none;
@@ -19,13 +28,5 @@ footer{
     &:hover {
       color: $secondary;
     }
-  }
-}
-
-.about-text {
-  width: 200px;
-
-  p {
-    font-size: 10px;
   }
 }
