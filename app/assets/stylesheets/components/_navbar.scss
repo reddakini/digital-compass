@@ -1,7 +1,7 @@
 .navbar-dc {
   justify-content: space-between;
   background-color: white;
-  border-bottom: $alm-white solid 2px;
+  box-shadow: 0 2px 4px 0 rgba(82,0,72,.2);
 }
 
 .navbar-dc .navbar-collapse {
@@ -9,7 +9,7 @@
 }
 
 .navbar-dc .navbar-brand img {
-  width: 50px;
+  height: 50px;
 }
 
 .nav-link {
@@ -34,10 +34,10 @@
 
 .nav-links > a {
   font-size: 16px;
-}
 
-.nav-links > a:hover {
-  color: $secondary !important;
+  &:hover {
+    color: $secondary !important;
+  }
 }
 
 .nav-links .button-sec {
