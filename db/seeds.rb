@@ -4,17 +4,37 @@
 require "csv"
 
 # ******************* Clearing *******************
+puts "\n"
+puts "\n"
+puts "------------------------------------------------------------------------"
+puts "Destroying all table contents..."
+puts "\n"
 RecommendedPathway.destroy_all
+puts "...table contents in recommended_pathways destroyed!"
 Recommendation.destroy_all
-# UserSkills.destroy_all
+puts "...table contents in recommendations destroyed!"
+UserSkill.destroy_all
+puts "...table contents in user_skills destroyed!"
+UserValue.destroy_all
+puts "...table contents in user_values destroyed!"
+Bookmark.destroy_all
+puts "...table contents in bookmarks destroyed!"
 RecommendedCourse.destroy_all
+puts "...table contents in recommended_courses destroyed!"
 PathwaySkill.destroy_all
+puts "...table contents in pathway_skills destroyed!"
 Skill.destroy_all
+puts "...table contents in skills destroyed!"
 SkillCategory.destroy_all
+puts "...table contents in skill_categories destroyed!"
 Course.destroy_all
+puts "...table contents in courses destroyed!"
 Pathway.destroy_all
-User.destroy_all
+puts "...table contents in pathways destroyed!"
 Value.destroy_all
+puts "...table contents in values destroyed!"
+User.destroy_all
+puts "...table contents in users destroyed!"
 
 # ******************* Users *******************
 puts "\n"
@@ -24,7 +44,7 @@ puts "Seeding users..."
 puts "\n"
 5.times do |i|
   new_user = User.new(
-    first_name: Faker::Name.first_name,
+    first_name: Faker::Name.female_first_name,
     last_name: Faker::Name.last_name,
     email: "email#{i + 1}@gmail.com",
     password: "123456"
@@ -141,4 +161,5 @@ end
 puts "values seeded from db/values.csv!"
 
 # ******************* Further Seeds after here *******************
+puts "\n"
 puts "\n"
