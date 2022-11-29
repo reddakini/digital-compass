@@ -9,9 +9,9 @@
     This means that demand is currently out-stripping supply.</p>
     <p>ICT is the seventh largest professional field in Switzerland and the number of ICT workers is still growing 2.5 times quicker than the total number of employees.
     So, these are great times to consider a career change or a lateral entry into Tech.
-    If you are still not sure which path may be the best for you, make sure to <%= link_to "sign-up", new_user_registration_path, class: "real-link" %>  and start by taking our assessment.</p>
+    If you are still not sure which path may be the best for you, make sure to <strong><%= link_to "sign-up", new_user_registration_path, class: "real-link" %></strong> and start by taking our tech-personality quiz.</p>
   </div>
-  <h3 class="my-5 py-5"> Check out the following Tech career pathways:</h3>
+  <h3 class="my-5 py-5"> Check out these in-demand career pathways:</h3>
     <div class="grid">
       <% @pathways.each do |pathway| %>
         <%= render "shared/path_card", pathway: pathway %>

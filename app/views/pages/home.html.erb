@@ -18,8 +18,12 @@
   </div>
 
   <div class="grid">
-    <% @pathways.each do |pathway| %>
+    <% @pathways.sample(3).each do |pathway| %>
       <%= render "shared/path_card", pathway: pathway %>
     <% end %>
+  </div>
+
+  <div class="my-5 py-5 btn-pathways">
+    <%= link_to "See all pathways", pathways_path, class: "button-sec" %>
   </div>
 </div>
