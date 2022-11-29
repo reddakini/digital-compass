@@ -90,14 +90,14 @@ body {
 .card {
  flex: initial;
  position: relative;
- height: 52rem;
- width: 40rem;
+ height: 46rem;
+ width: 35rem;
  -moz-perspective: 200rem;
  perspective: 200rem;
  margin: 5px;
 
  &__side {
-  height: 52rem;
+  height: 46rem;
   transition: all 0.8s ease;
   position: absolute;
   top: 0;
@@ -196,17 +196,17 @@ body {
 
  &__details {
   font-family: $body-color;
-  padding: 4rem 2rem;
-  margin-right: 10px;
+  padding: 2rem;
   ul {
    list-style: none;
-   width: 80%;
+   width: 90%;
    margin: 0 auto;
+   padding-left: 0px !important;
 
    li {
     text-align: center;
-    font-size: 1.6rem;
-    padding: 1rem;
+    font-size: 1.4rem;
+    padding: 0.8rem;
 
     &:not(:last-child) {
      border-bottom: 1px solid $color-gray-light;
