@@ -1,19 +1,20 @@
 .home-section-2 {
   margin-bottom: 30px;
   background-color: $alm-white;
+  min-height: 70vh;
 }
 
 .cards {
   display: flex;
-  justify-content: space-between;
   justify-content: space-around;
 }
 
 .how-to-card {
   text-align: center;
+  width: 350px;
 
   img {
     width: 200px;
-    height: 300px;
+    height: 200px;
   }
 }
