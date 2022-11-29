@@ -1,0 +1,14 @@
+<div class="results-tab">
+  <div class="results-box-all">
+    <h3>All Pathways</h3>
+    <ul>
+      <% @recommended_pathways.each do |recommended_pathway| %>
+        <li><%= recommended_pathway.pathway.name %> <%= recommended_pathway.match_score %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="results-box-detail">
+    <h3>Details</h3>
+  </div>
+</div>
