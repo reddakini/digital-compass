@@ -37,7 +37,7 @@
         <% Value.all.each do |value| %>
           <p><%= f.input :importance, collection: (1..5).to_a, label: "#{value.name}", input_html: {data: {controller: "star-rating"}}, name: "user_value[value][#{value.id}]"%></p>
         <% end %>
-        <%= f.submit "Submit" %>
+        <%= f.button :submit, "Submit", class: "button-sec" %>
       <% end %>
     </div>
   </div>
