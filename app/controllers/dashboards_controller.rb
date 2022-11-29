@@ -4,5 +4,6 @@ class DashboardsController < ApplicationController
     @result_chart = Pathway.group(:name).count
     @user_value = UserValue.new
     @user_skills = current_user.skills
+    @user_skill = UserSkill.new
   end
 end
