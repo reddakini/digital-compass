@@ -1,11 +1,3 @@
-.add-skills-button {
-  // width: auto;
-}
-
-// .fa-solid {
-//   width: 50px;
-// }
-
 .headers-skills {
   display: grid;
   grid-template-columns: 0.8fr 1fr 0.2fr;
@@ -34,12 +26,10 @@
 }
 
 .skills-table {
-  border: 3px solid $primary;
+  // border: 3px solid $primary;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
-  margin: 0 auto;
-  width: 70%;
   padding: 10px 20px 20px 20px;
-
 }
 
 .one-skill-row > i {
@@ -57,4 +47,23 @@
   margin-top: 2%;
   display: flex;
   justify-content: flex-end;
+  }
+
+.save-btn-skills {
+ color: inherit;
+ border: none;
+ background: inherit;
+ line-height: 1em;
+}
+
+.button-save-center {
+ display: flex;
+ justify-content: center;
+ margin: 5px 0 0 auto;
+}
+
+.skills-tab-content {
+  // border: 2px solid greenyellow;
+  margin: 0 auto;
+  width: 70%;
 }

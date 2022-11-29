@@ -4,5 +4,4 @@ class UserSkill < ApplicationRecord
 
   validates :user, uniqueness: {scope: :skill}
 
-
 end
