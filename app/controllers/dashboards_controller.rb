@@ -5,5 +5,6 @@ class DashboardsController < ApplicationController
     @user_value = UserValue.new
     @user_skills = current_user.skills
     @user_values = current_user.user_values.order(importance: :desc).limit(5)
+    @user_skill = UserSkill.new
   end
 end
