@@ -11,88 +11,66 @@
     <div class="tabs-content">
       <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-          <button class="nav-link active" id="nav-overview-tab" data-bs-toggle="tab" data-bs-target="#nav-overview" type="button" role="tab" aria-controls="nav-overview" aria-selected="true">Overview</button>
+          <button class="nav-link <%= "active" if params[:tab].nil? %>" id="nav-overview-tab" data-bs-toggle="tab" data-bs-target="#nav-overview" type="button" role="tab" aria-controls="nav-overview" aria-selected="true">Overview</button>
           <button class="nav-link" id="nav-results-tab" data-bs-toggle="tab" data-bs-target="#nav-results" type="button" role="tab" aria-controls="nav-results" aria-selected="false">Results</button>
-          <button class="nav-link" id="nav-skills-tab" data-bs-toggle="tab" data-bs-target="#nav-skills" type="button" role="tab" aria-controls="nav-skills" aria-selected="false">Skills</button>
+          <button class="nav-link <%= "active" if params[:tab] == 'Skills' %>" id="nav-skills-tab" data-bs-toggle="tab" data-bs-target="#nav-skills" type="button" role="tab" aria-controls="nav-skills" aria-selected="false">Skills</button>
           <button class="nav-link" id="nav-values-tab" data-bs-toggle="tab" data-bs-target="#nav-values" type="button" role="tab" aria-controls="nav-values" aria-selected="false">Values</button>
         </div>
       </nav>
-
       <div class="tab-content" id="nav-tabContent">
-        <div class="tab-pane fade show active" id="nav-overview" role="tabpanel" aria-labelledby="nav-overview-tab">
-<div class="content-overview">
-          <div class="overview-first-line">
-            <div class="progress-chart">
-            <h3>Progress</h3>
-              <%= pie_chart @progress_chart, donut: true, colors: ["#716F35", "#DB9A8F", "#ECCC6E"], legend: false, class: "donut-chart", height: "250px", width: "250px" %>
+        <div class="tab-pane fade  <%= "show active" if params[:tab].nil? %>" id="nav-overview" role="tabpanel" aria-labelledby="nav-overview-tab">
+          <div class="content-overview">
+            <div class="overview-first-line">
+              <div class="progress-chart">
+              <h3>Progress</h3>
+                <%= pie_chart @progress_chart, donut: true, colors: ["#716F35", "#DB9A8F", "#ECCC6E"], legend: false, class: "donut-chart", height: "250px", width: "250px" %>
 
-            </div>
-
-            <div class="two-results">
-              <div class="two-results-heading">
-                <h2>Your top matches</h2>
               </div>
 
-              <div class="two-result-cards">
+              <div class="two-results">
+                <div class="two-results-heading">
+                  <h2>Your top matches</h2>
+                </div>
 
-                <div class="result-card">
-                  <h3>DATA SCIENTIST</h3>
-                  <br>
-                  <h1>87%</h1>
-                  <div class="button-sec">
-                   <%= link_to "More >",  pathway_path(Pathway.find_by(name: 'Data Scientist')) %>
+                <div class="two-result-cards">
+
+                  <div class="result-card">
+                    <h3>DATA SCIENTIST</h3>
+                    <br>
+                    <h1>87%</h1>
+                    <div class="button-sec">
+                    <%= link_to "More >",  pathway_path(Pathway.find_by(name: 'Data Scientist')) %>
+                    </div>
+                  </div>
+                  <div class="result-card">
+                    <h3>BACK-END DEVELOPER</h3>
+                    <br>
+                    <h1>76%</h1>
+                    <div class="button-sec">
+                    <%= link_to "More >",  pathway_path(Pathway.find_by(name: 'BackEnd Developer')) %>
+                    </div>
                   </div>
                 </div>
-                <div class="result-card">
-                  <h3>BACK-END DEVELOPER</h3>
-                  <br>
-                  <h1>76%</h1>
-                  <div class="button-sec">
-                   <%= link_to "More >",  pathway_path(Pathway.find_by(name: 'BackEnd Developer')) %>
-                  </div>
-                </div>
+              </div>
+            </div>
+
+            <div class="overview-second-line" id="test">
+              <div class="overview-skills">
+              <h3>Your skills</h3>
+              </div>
+              <div class="values-chart">
+                <%= pie_chart @result_chart, download: "progress-chart-pie-chart", colors: ["#6E184F", "#716F35", "#DB9A8F", "#ECCC6E", "#A66940", "#F2E9E1", "#FCE8D2", "#E9E9E9", "#0E1251"] %>
               </div>
             </div>
           </div>
-
-          <div class="overview-second-line">
-            <div class="overview-skills">
-            <h3>Your skills</h3>
-            </div>
-            <div class="values-chart">
-              <%= pie_chart @result_chart, download: "progress-chart-pie-chart", colors: ["#6E184F", "#716F35", "#DB9A8F", "#ECCC6E", "#A66940", "#F2E9E1", "#FCE8D2", "#E9E9E9", "#0E1251"] %>
-            </div>
-          </div>
-        </div>
         </div>
 
         <div class="tab-pane fade" id="nav-results" role="tabpanel" aria-labelledby="nav-results-tab">
           <%= image_tag "screenshot-results.jpg", alt: "text", width: "80%" %>
         </div>
 
-        <div class="tab-pane fade" id="nav-skills" role="tabpanel" aria-labelledby="nav-skills-tab">
-
-          <%#= simple_form_for @skills do |f| %>
-            <%#= f.input :SKILLNAME, as: :boolean, input_html: { class: "toggle" } %>
-          <%# end %>
-<div class="thisisstupid">
-          <% @user_skills.each do |skill| %>
-            <div class="one-skill-row">
-              <h3><%= skill.name %></h3>
-              <div class="slidecontainer">
-                <input type="range" min="0" max="3" value="0" class="slider" id="skillRrange">
-              </div>
-              <i class="fa-solid fa-book-open"></i>
-            </div>
-          <% end %>
-</div>
-
-          <div class="button-pri">
-            <%= link_to "Add more...", new_user_skill_path %>
-          </div>
-
-
-
+        <div class="tab-pane fade <%= "show active" if params[:tab] == 'Skills' %>" id="nav-skills" role="tabpanel" aria-labelledby="nav-skills-tab">
+          <%= render "dashboards/skillstab" %>
         </div>
 
         <div class="tab-pane fade" id="nav-values" role="tabpanel" aria-labelledby="nav-values-tab">

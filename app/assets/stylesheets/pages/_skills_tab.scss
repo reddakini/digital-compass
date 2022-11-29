@@ -6,6 +6,30 @@
 //   width: 50px;
 // }
 
-// .thisisstupid {
-//   display: inline
-// }
+.one-skill-row {
+  border: 2px solid greenyellow;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  padding: 10px;
+}
+
+.one-skill-row > p{
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+.skills-table {
+  border: 3px solid $primary;
+  border-radius: 5px;
+  margin: 0 auto;
+  width: 70%;
+  padding: 20px;
+  
+}
+
+.one-skill-row > i {
+  // margin-left: 20px;
+  padding-left: 30px;
+  width: 150%;
+}
