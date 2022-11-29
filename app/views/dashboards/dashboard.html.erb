@@ -4,7 +4,7 @@
   <div class="dashboard-content">
     <div class="dashboard-header my-5">
       <div class="dashboard-heading">
-        <h2>Your dashboard</h2>
+        <h2>Dashboard</h2>
       </div>
     </div>
 
@@ -28,7 +28,7 @@
 
               <div class="two-results">
                 <div class="two-results-heading">
-                  <h2>Your top matches</h2>
+                  <h2>Your Top Matches</h2>
                 </div>
 
                 <div class="two-result-cards">
@@ -55,13 +55,13 @@
 
             <div class="overview-second-line" id="test">
               <div class="overview-skills">
-                <h3>Your skills</h3>
+                <h3>Your Skills</h3>
 
               </div>
               <div class="values-chart">
-                <h3>Your Top 5 Work Values</h3>
+                <h3 class="mb-3">Your Top 5 Work Values</h3>
                 <% @user_values.where("importance >= 4").each do |uv| %>
-                  <p><%= uv.value.name, class: "value-stack" %></p>
+                  <p class="value-stack"><%= uv.value.name %></p>
                 <% end %>
                 <%#= bar_chart @user_values, download: "bar-chart", colors: ["#6E184F", "#716F35", "#DB9A8F", "#ECCC6E", "#A66940", "#F2E9E1", "#FCE8D2", "#E9E9E9", "#0E1251"] %>
               </div>
