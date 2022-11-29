@@ -1,0 +1,15 @@
+        <div class="skills-table">
+          <% @user_skills.each do |skill| %>
+            <div class="one-skill-row">
+              <p><%= skill.name %></p>
+              <div class="col-3 slider-simple">
+                0<input type="range" class="form-range" value="0" min="0" max="3" step="1" id="customRange3" name="[<%= skill.name %>]">
+              </div>
+              <i class="fa-solid fa-book-open"></i>
+            </div>
+          <% end %>
+        </div>
+
+          <div class="button-pri">
+            <%= link_to "Add more...", new_user_skill_path %>
+          </div>
