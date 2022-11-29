@@ -1,19 +1,31 @@
 footer{
   justify-content: space-between;
   background: white;
+  border-top: $alm-white solid 2px;
   flex-grow: 1;
   height: 85px;
-  // margin-top: 50px;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  padding: 30px 50px 50px 50px;
 }
 
 .footer-links {
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-left: 0px !important;
   list-style: none;
-  display: flex;
-  justify-content: space-evenly;
 
   a {
     text-decoration: none;
+
+    &:hover {
+      color: $secondary;
+    }
+  }
+}
+
+.about-text {
+  width: 200px;
+
+  p {
+    font-size: 10px;
   }
 }

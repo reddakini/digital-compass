@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resources :bookmarks, only: [:create]
   end
   resources :user_skills, only: [:new, :create]
+  resources :user_values, only: [:new, :create]
 
   get "/dashboard", to: "dashboards#dashboard"
   get "/assessment", to: "pages#assessment"

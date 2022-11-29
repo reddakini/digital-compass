@@ -107,6 +107,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_094818) do
     t.index ["user_id"], name: "index_user_skills_on_user_id"
   end
 
+  create_table "user_values", force: :cascade do |t|
+    t.integer "importance"
+    t.bigint "user_id", null: false
+    t.bigint "value_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_values_on_user_id"
+    t.index ["value_id"], name: "index_user_values_on_value_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -122,6 +132,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_094818) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "values", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+  end
+
   add_foreign_key "bookmarks", "pathways"
   add_foreign_key "bookmarks", "users"
   add_foreign_key "pathway_skills", "pathways"
@@ -134,4 +150,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_28_094818) do
   add_foreign_key "skills", "skill_categories"
   add_foreign_key "user_skills", "skills"
   add_foreign_key "user_skills", "users"
+  add_foreign_key "user_values", "\"values\"", column: "value_id"
+  add_foreign_key "user_values", "users"
 end
