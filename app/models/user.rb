@@ -11,6 +11,7 @@ class User < ApplicationRecord
   has_many :courses, through: :recommended_courses
   has_many :user_skills
   has_many :skills, through: :user_skills
+  has_many :bookmarks
 
   validates :first_name, presence: true
   validates :last_name, presence: true

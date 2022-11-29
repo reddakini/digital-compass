@@ -6,6 +6,7 @@ class PathwaysController < ApplicationController
   end
 
   def show
+    @bookmark = Bookmark.new
     @pathway = Pathway.find(params[:id])
   end
 end
