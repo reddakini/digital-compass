@@ -23,10 +23,21 @@ class UserSkillsController < ApplicationController
   end
 
   def update_level
-    levels = params[:user_skill][:mastery_level][:learning_interest]
-    levels.each do |id, mastery_level, learning_interest|
+    levels = params[:user_skill][:mastery_level]
+    if params[:user_skill][:learning_interest]
+      interests = params[:user_skill][:learning_interest].keys.map { |id| id.to_i }
+    else
+      interests = []
+    end
+    
+    levels.each do |id, mastery_level|
       @user_skill = UserSkill.find_by(skill_id: id, user_id: current_user.id)
-      @user_skill.update(mastery_level: mastery_level, learning_interest: learning_interest)
+      # if it exists in the learning interest
+      if interests.include?(id.to_i)
+        @user_skill.update(mastery_level: mastery_level, learning_interest: true)
+      else
+        @user_skill.update(mastery_level: mastery_level, learning_interest: false)
+      end
     end
     redirect_to dashboard_path(tab: "Skills")
   end

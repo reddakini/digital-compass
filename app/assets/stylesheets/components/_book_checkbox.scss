@@ -22,3 +22,11 @@
 .book-checkbox:checked + label {
   color: $primary;
 }
+
+.book-checkbox.active + label {
+  color: $primary;
+}
+
+.book-checkbox.active:not(:checked) + label {
+  color: #7d868e;
+}

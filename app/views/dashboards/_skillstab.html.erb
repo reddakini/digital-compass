@@ -12,12 +12,18 @@
         <div class="one-skill-row">
             <p><%= skill.name %></p>
             <div class="col-3 slider-simple">
-              <input type="range" class="form-range" value="<%= user_skill ? user_skill.mastery_level : 0 %>" min="0" max="3" step="1" data-id="<%= skill.id %>" data-action="change->skills-slider#sliderValue" name="user_skill[mastery_level][<%= skill.id %>]">
+              <input type="range" class="form-range" value="<%= user_skill.mastery_level ? user_skill.mastery_level : 0 %>" min="0" max="3" step="1" data-id="<%= skill.id %>" data-action="change->skills-slider#sliderValue" name="user_skill[mastery_level][<%= skill.id %>]">
             </div>
-            <span id="value-<%= skill.id %>" class="selected_value"><%= user_skill ? user_skill.mastery_level : 0 %></span>
+            <span id="value-<%= skill.id %>" class="selected_value"><%= user_skill.mastery_level ? user_skill.mastery_level : 0 %></span>
 
-            <input class="book-checkbox" type="checkbox" id="book" name="book" value="Book">
-            <label for="book"> <i class="fa-solid fa-book-open"></i> </label><br>
+            <input
+              class="book-checkbox <%= "active" if user_skill.learning_interest %>"
+              type="checkbox"
+              id="interest-<%= skill.id %>"
+              name="user_skill[learning_interest][<%= skill.id %>]"
+              <%= "checked" if user_skill.learning_interest %>
+              value="Book">
+            <label for="interest-<%= skill.id %>"> <i class="fa-solid fa-book-open"></i> </label><br>
 
           </div>
         <% end %>
