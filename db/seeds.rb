@@ -72,7 +72,31 @@ CSV.foreach(filepath, headers: :first_row) do |row|
     suit_for: row['pw_suit'],
     job_roles: row['pw_job_roles'],
     avg_salary: row['pw_avg_salary'],
-    projected_growth: row['pw_proj_growth']
+    projected_growth: row['pw_proj_growth'],
+    # answers: [
+    #   "Theory",
+    #   "Real-life",
+    #   "Completing a puzzle",
+    #   "Answering a question by using the internet",
+    #   "Writing a story",
+    #   "Do one task at a time until I finish",
+    #   "Take breaks between each sub-task",
+    #   "A thrilling and exciting action movie",
+    #   "A character-driven drama",
+    #   "An insightful documentary about how things are built",
+    #   "Admire it for its beauty",
+    #   "Consider what makes this painting popular and important",
+    #   "Wonder what techniques a painter used to paint it",
+    #   "Follow the instructions precisely",
+    #   "Look at the picture and wing it",
+    #   "Taste as I go and adjust",
+    #   "Looking things up as I need answers to them",
+    #   "Learning everything about one topic",
+    #   "Knowing a high level summary of ten topics",
+    #   "Pictures",
+    #   "Systems",
+    #   "Stories"
+    # ]
   )
   new_pathway.save!
   puts "#{new_pathway.name} (catergory: #{new_pathway.category}) seeded!"
