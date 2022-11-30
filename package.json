@@ -10,6 +10,7 @@
     "chart.js": "^4.0.1",
     "chartkick": "^4.2.0",
     "star-rating.js": "^4.3.0",
+    "stimulus-reveal-controller": "^4.0.0",
     "typed.js": "^2.0.12",
     "webpack": "^5.75.0",
     "webpack-cli": "^5.0.0"

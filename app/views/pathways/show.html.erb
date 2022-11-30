@@ -1,6 +1,23 @@
 <div class="container banana">
   <div class="my-5 py-5">
-    <h2 class="mb-5 title-path-border"><%= @pathway.name %></h2>
+    <h2 class="mb-5 title-path-border">
+    <div class="show-title-bookmark">
+      <div class="pathway-name">
+        <%= @pathway.name %>
+      </div>
+      <div class="bookmark-icon">
+        <% if user_signed_in? %>
+          <%= link_to "#bookmarks" do  %>
+            <% if @existing_bookmarks.empty? %>
+              <i class="fa-regular fa-bookmark bookmark-icon" ></i>
+            <% else %>
+              <i class="fa-solid fa-bookmark bookmark-icon"></i>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    </h2>
     <%# <h4>Category: <%= @pathway.category %></h4>
     <h4>Average Yearly Salary:  Fr. <%= @pathway.avg_salary %></h4>
     <h4 class="pt-3">Projected Job Growth: <%= @pathway.projected_growth %></h4>
@@ -25,12 +42,6 @@
   <div>
 
   <%# add form to create a new @bookmark with column :note %>
-  <%= simple_form_for [@pathway, @bookmark] do |f| %>
-    <%= f.input :note %>
-    <div class="button-position">
-       <%= f.button :submit, 'Save', class: "button-sec" %>
-    </div>
-  <% end %>
 
     <h3 class="my-5">Recommended Courses:</h3>
     <div class="grid mb-5">
@@ -43,6 +54,49 @@
             <%= link_to "Go to Course", course.url, class: "real-link", target: :_blank %>
           </div>
         </div>
+      <% end %>
+    </div>
+
+
+
+    <div class="bookmark-container">
+      <h3 class="my-5">Your personal notes:</h3>
+      <% if user_signed_in? %>
+        <%= simple_form_for [@pathway, @bookmark], html: { data: { turbo: false } } do |f| %>
+          <%= f.input :note, label: false %>
+          <div class="button-position">
+            <%= f.button :submit, 'Save', class: "button-sec" %>
+          </div>
+        <% end %>
+        <div id="bookmarks">
+          <% @existing_bookmarks.each do |bookmark| %>
+          <div class="bookmark-note">
+            <div class="bookmark-note1">
+              <%= bookmark.note %>
+            </div>
+            <div class="edit-delete-icons">
+              <div data-controller="reveal" class="w-100" data-reveal-hidden-class="d-none">
+                <div class="d-flex align-items-center justify-content-end">
+                  <button data-action="click->reveal#toggle" type="button" class="btn"><i class="fa-solid fa-pencil"></i></button>
+                  <%= button_to bookmark_path(bookmark), method: "delete" do %>
+                    <i class="fa-regular fa-trash-can"></i>
+                  <% end %>
+                </div>
+                <div data-reveal-target="item" class="d-none mt-4">
+                  <%= simple_form_for bookmark, html: { data: { turbo: false } } do |f| %>
+                    <%= f.input :note, label: false %>
+                    <div class="button-position">
+                      <%= f.button :submit, 'Save', class: "button-sec" %>
+                    </div>
+                  <% end %>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+
       <% end %>
     </div>
   </div>
