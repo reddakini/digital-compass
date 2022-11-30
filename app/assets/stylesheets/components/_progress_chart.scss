@@ -56,6 +56,10 @@
   -webkit-transform-origin: center right;
   transform-origin: center right;
   animation: loading-1 1.8s linear forwards;
+
+  &.one-q {
+    animation: loading-3 1.5s linear forwards 1.8s;
+  }
 }
 .progress .progress-value{
   width: 90%;
@@ -72,28 +76,45 @@
 }
 .progress.blue .progress-bar{
   border-color: #049dff;
+
+  &.empty {
+    border-color: transparent;
+  }
 }
 .progress.blue .progress-left .progress-bar{
-  animation: loading-2 1.5s linear forwards 1.8s;
+
+  &.full {
+    animation: loading-1 1.5s linear forwards 1.8s;
+  }
+
+  &.half {
+    animation: loading-5 1.5s linear forwards 1.8s;
+  }
+
+  &.three-q {
+    animation: loading-3 1.5s linear forwards 1.8s;
+  }
 }
-.progress.yellow .progress-bar{
-  border-color: #fdba04;
-}
-.progress.yellow .progress-left .progress-bar{
-  animation: loading-3 1s linear forwards 1.8s;
-}
-.progress.pink .progress-bar{
-  border-color: #ed687c;
-}
-.progress.pink .progress-left .progress-bar{
-  animation: loading-4 0.4s linear forwards 1.8s;
-}
-.progress.green .progress-bar{
-  border-color: #1abc9c;
-}
-.progress.green .progress-left .progress-bar{
-  animation: loading-5 1.2s linear forwards 1.8s;
-}
+// .progress.yellow .progress-bar{
+//   border-color: #fdba04;
+// }
+// .progress.yellow .progress-left .progress-bar{
+//   animation: loading-3 1s linear forwards 1.8s;
+// }
+// .progress.pink .progress-bar{
+//   border-color: #ed687c;
+// }
+// .progress.pink .progress-left .progress-bar{
+//   animation: loading-4 0.4s linear forwards 1.8s;
+// }
+// .progress.green .progress-bar{
+//   border-color: #1abc9c;
+// }
+// .progress.green .progress-left .progress-bar{
+//   animation: loading-5 1.2s linear forwards 1.8s;
+// }
+
+// full circle
 @keyframes loading-1{
   0%{
       -webkit-transform: rotate(0deg);
@@ -114,6 +135,8 @@
       transform: rotate(144deg);
   }
 }
+
+// This is 75%
 @keyframes loading-3{
   0%{
       -webkit-transform: rotate(0deg);
@@ -124,24 +147,26 @@
       transform: rotate(90deg);
   }
 }
-@keyframes loading-4{
-  0%{
-      -webkit-transform: rotate(0deg);
-      transform: rotate(0deg);
-  }
-  100%{
-      -webkit-transform: rotate(36deg);
-      transform: rotate(36deg);
-  }
-}
+// @keyframes loading-4{
+//   0%{
+//       -webkit-transform: rotate(0deg);
+//       transform: rotate(0deg);
+//   }
+//   100%{
+//       -webkit-transform: rotate(36deg);
+//       transform: rotate(36deg);
+//   }
+// }
+
+// This is 50%
 @keyframes loading-5{
   0%{
       -webkit-transform: rotate(0deg);
       transform: rotate(0deg);
   }
   100%{
-      -webkit-transform: rotate(126deg);
-      transform: rotate(126deg);
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
   }
 }
 @media only screen and (max-width: 990px){

@@ -9,6 +9,18 @@ class DashboardsController < ApplicationController
     #   "Take Assessments" => 0
     # }
     # @progress_chart["Take Assessments"] = total - @progress_chart["Quiz"] - @progress_chart["Skills Assessment"] - @progress_chart["Values Assessment"]
+    @progress = [
+      current_user.recommendations.any? ? 50 : 0,
+      current_user.skills.any? ? 25 : 0,
+      current_user.values.any? ? 25 : 0
+    ]
+    if @progress.sum == 50
+      @progress_class = "half"
+    elsif @progress.sum == 75
+      @progress_class = "three-q"
+    elsif @progress.sum == 100
+      @progress_class = "full"
+    end
 
     @result_chart = Pathway.group(:name).count
 
