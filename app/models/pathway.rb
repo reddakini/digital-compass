@@ -3,6 +3,9 @@ class Pathway < ApplicationRecord
   has_many :recommended_courses
   has_many :courses, through: :recommended_courses
   has_many :bookmarks
+  has_many :pathway_skills
+  has_many :skills, through: :pathway_skills
+  has_many :skill_categories, through: :skills
 
   validates :name, presence: true
   validates :description, presence: true
