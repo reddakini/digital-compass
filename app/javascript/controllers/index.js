@@ -12,3 +12,6 @@ application.register("star-rating", StarRatingController)
 
 import TypedJsController from "./typed_js_controller"
 application.register("typed-js", TypedJsController)
+
+import Reveal from 'stimulus-reveal-controller'
+application.register('reveal', Reveal)

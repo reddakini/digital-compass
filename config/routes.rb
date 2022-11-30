@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
   resources :user_skills, only: [:new, :create]
   resources :user_values, only: [:new, :create]
+  resources :bookmarks, only: [:destroy, :update]
 
   get "/dashboard", to: "dashboards#dashboard"
   get "/assessment", to: "pages#assessment"
