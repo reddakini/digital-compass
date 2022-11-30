@@ -6,7 +6,16 @@
       <div class="dashboard-heading">
         <h2>Dashboard</h2>
       </div>
-    </div>
+
+    <% if !current_user.recommendations.empty? %>
+      <div class="dashboard-header-button">
+        <div class="button-pri button-pri-dashboard">
+          <%= link_to "Retake the quiz", assessment_path %>
+        </div>
+       </div>
+    <% end %>
+
+      </div>
 
     <div class="tabs-content">
       <nav>
