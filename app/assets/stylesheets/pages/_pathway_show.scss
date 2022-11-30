@@ -1,3 +1,26 @@
+
+.title-path-border {
+  border-bottom: #FCE8D2 solid 4px;
+}
+
+.column-one {
+  // border: 2px solid red;
+  // padding: 20px;
+}
+
+.column-two {
+  // border: 2px solid blue;
+  // padding: 20px;
+}
+
+.showpage-columns {
+  //border: 2px solid green;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 50px;
+}
+
+// ------------   COURSES PART ------------------
 .pathway_course_bg {
   background-color: #FCE8D2 !important;
   // background-color: #ECCC6E !important;
@@ -5,9 +28,4 @@
 
 .ratingandlink {
   width: 100%;
-}
-
-.title-path-border {
-  border-bottom: #FCE8D2 solid 4px;
-
 }

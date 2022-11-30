@@ -52,3 +52,17 @@ fieldset legend {
   justify-content: center;
   margin-bottom: 50px;
 }
+
+//---------------- SKILLS SHOWPAGE DISPLAY
+
+.skills-showpage {
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 50rem;
+  padding: 0.2rem 0.8rem;
+  background-color: #FAF2DA;
+  color: $secondary;
+  border: 1px solid $secondary;
+  margin-right: 1.5rem;
+  margin-bottom: 1.5rem;
+}
