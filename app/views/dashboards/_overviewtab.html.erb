@@ -41,8 +41,11 @@
             <div class="overview-second-line" id="test">
               <div class="overview-skills">
                 <h3>Your Skills</h3>
-
+                  <% @user_skills.first(5).each do |skill| %>
+                    <%= skill.name %>
+                  <% end %>
               </div>
+
               <div class="values-chart">
                 <h3 class="mb-3">Your Top 5 Work Values</h3>
                 <% @user_values.where("importance >= 4").each do |uv| %>

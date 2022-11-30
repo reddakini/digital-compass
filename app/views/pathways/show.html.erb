@@ -50,7 +50,6 @@
   </div>
 
   <div>
-
     <h3 class="my-5">Recommended Courses:</h3>
     <div class="grid mb-5">
       <% @pathway.courses.each do |course| %>
@@ -64,12 +63,11 @@
         </div>
       <% end %>
     </div>
-
+  </div>
   <%# add form to create a new @bookmark with column :note %>
-
     <div class="bookmark-container">
-      <h3 class="my-5">Your personal notes:</h3>
       <% if user_signed_in? %>
+      <h3 class="my-5">Your personal notes:</h3>
         <%= simple_form_for [@pathway, @bookmark], html: { data: { turbo: false } } do |f| %>
           <%= f.input :note, label: false %>
           <div class="button-position">
@@ -104,10 +102,9 @@
           </div>
           <% end %>
         </div>
-
       <% end %>
     </div>
   </div>
 
-
 </div>
+
