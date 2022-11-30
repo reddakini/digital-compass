@@ -15,7 +15,10 @@
               <input type="range" class="form-range" value="<%= user_skill ? user_skill.mastery_level : 0 %>" min="0" max="3" step="1" data-id="<%= skill.id %>" data-action="change->skills-slider#sliderValue" name="user_skill[mastery_level][<%= skill.id %>]">
             </div>
             <span id="value-<%= skill.id %>" class="selected_value"><%= user_skill ? user_skill.mastery_level : 0 %></span>
-            <i class="fa-solid fa-book-open"></i>
+
+            <input class="book-checkbox" type="checkbox" id="book" name="book" value="Book">
+            <label for="book"> <i class="fa-solid fa-book-open"></i> </label><br>
+
           </div>
         <% end %>
       <div class="button-sec button-save-center">

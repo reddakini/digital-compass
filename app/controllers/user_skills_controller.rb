@@ -23,10 +23,10 @@ class UserSkillsController < ApplicationController
   end
 
   def update_level
-    levels = params[:user_skill][:mastery_level]
-    levels.each do |id, mastery_level|
+    levels = params[:user_skill][:mastery_level][:learning_interest]
+    levels.each do |id, mastery_level, learning_interest|
       @user_skill = UserSkill.find_by(skill_id: id, user_id: current_user.id)
-      @user_skill.update(mastery_level: mastery_level)
+      @user_skill.update(mastery_level: mastery_level, learning_interest: learning_interest)
     end
     redirect_to dashboard_path(tab: "Skills")
   end
