@@ -1,0 +1,3 @@
+class ApplicationService
+  # nothing here yet...
+end
