@@ -3,8 +3,8 @@ class RecommendationsController < ApplicationController
     @recommendation = Recommendation.new
     @recommendation.user = current_user
     @recommendation.save
-    Typeform.new(@recommendation, params[:response_id]).call
-    # MatchScoreCalculation.new().call
+    answers = Typeform.new(params[:response_id]).call
+    MatchScoreCalc.new(answers, @recommendation).call
     sleep(3.0)
     redirect_to dashboard_path
   end
