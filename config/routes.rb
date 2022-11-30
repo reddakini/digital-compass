@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
   resources :user_skills, only: [:new, :create]
   resources :user_values, only: [:new, :create]
+  resources :bookmarks, only: [:destroy, :update]
 
   patch "/user_skills_level", to: "user_skills#update_level", as: :update_level
   get "/dashboard", to: "dashboards#dashboard"

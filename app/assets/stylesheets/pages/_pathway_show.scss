@@ -20,6 +20,12 @@
   grid-gap: 50px;
 }
 
+
+.title-path-border {
+  border-bottom: #FCE8D2 solid 4px;
+
+}
+
 // ------------   COURSES PART ------------------
 .pathway_course_bg {
   background-color: #FCE8D2 !important;
@@ -29,3 +35,43 @@
 .ratingandlink {
   width: 100%;
 }
+
+// ------------   BOOKMARK PART ------------------
+
+.show-title-bookmark {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bookmark-note {
+  padding: 16px;
+  // display: flex;
+  // justify-content: space-between;
+  margin-bottom: 8px;
+  box-shadow: 0 0 7px rgba(0,0,0,0.2);
+}
+
+.bookmark-container {
+  width: 80%;
+}
+
+.edit-delete-icons {
+  font-size: 16px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 100%;
+}
+
+.bookmark-note1 {
+  font-size: 16px;
+}
+
+.fa-solid{
+  font-size: 16px;
+}
+
+.bookmark-icon {
+  font-size: 30px;
+}
+
