@@ -46,6 +46,7 @@
   font-size: 25px;
 }
 
+
 .progress-chart {
   // border: 2px solid purple;
   padding: 20px;
@@ -60,6 +61,9 @@
   margin-bottom: 10px;
 }
 
+.progress-text {
+  line-height: 1.5;
+}
 
 .two-results {
   display: grid;
@@ -234,6 +238,3 @@
 // .button-sec-profile {
 //   width: 80%;
 // }
-
-
-

@@ -110,15 +110,4 @@
   </div>
 
 
-  <div>
-  <%# add form to create a new @bookmark with column :note %>
-  <%= simple_form_for [@pathway, @bookmark] do |f| %>
-    <%= f.input :note %>
-    <div class="button-position">
-       <%= f.button :submit, 'Save', class: "button-sec" %>
-    </div>
-  <% end %>
-  </div>
-
-
 </div>

@@ -2,7 +2,13 @@
             <div class="overview-first-line">
               <div class="progress-chart">
                 <h3>Progress</h3>
-                <%= pie_chart @progress_chart, donut: true, colors: ["#716F35", "#DB9A8F", "#ECCC6E"], legend: false, class: "donut-chart", height: "250px", width: "250px" %>
+                  <%= render "dashboards/progress" %>
+
+                  <div class="mt-5 progress-text">
+                    <p><%#= current_user.recommendations.any? ? "✅ Step 1.- Quiz" : "⏳ Step 1.- Take Quiz"%></p>
+                    <p><%#= current_user.skills.any? ? "✅ Step 2.- Skills Assessment" : "⏳ Step 2.- Take Skills Assessment"%></p>
+                    <p><%#= current_user.values.any? ? "✅ Step 3.- Values Assessment" : "⏳ Step 3.- Take Values Assessment"%></p>
+                  </div>
               </div>
 
               <div class="two-results">
