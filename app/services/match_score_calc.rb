@@ -51,7 +51,6 @@ class MatchScoreCalc < ApplicationService
       )
       recommended_pathway.save
     end
-    raise
   end
 
   MATCHING_DATA = [
