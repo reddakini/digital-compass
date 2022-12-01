@@ -56,6 +56,21 @@ puts "\n"
 end
 puts "5 users seeded using Faker!"
 
+puts "------------------------------------"
+puts "Seeding non generic users..."
+puts "\n"
+cornelius = User.new(
+  first_name: "Cornelius",
+  last_name: "Heggli",
+  email: "cornelius@gmail.com",
+  password: "123456"
+)
+cornelius.save!
+puts "#{cornelius.first_name} #{cornelius.last_name}"
+puts "#{cornelius.email} / pw: #{cornelius.password} seeded!"
+puts "------------------------------------"
+puts "Non generic users seeded!"
+
 # ******************* Pathways *******************
 puts "\n"
 puts "\n"
