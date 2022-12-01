@@ -21,7 +21,7 @@
         <div class="pw-bar-chart">
           <% opa = 1.0 %>
           <% @recommended_pathways.each do |recommended_pathway| %>
-            <%= link_to pathway_path(recommended_pathway) do %>
+            <%= link_to pathway_path(recommended_pathway.pathway) do %>
               <div class="pw-bar" style="width: <%= recommended_pathway.match_score %>%; opacity: <%= opa %>">
                 <p class="pw-name"><%= recommended_pathway.pathway.name %></p>
                 <p class="pw-score"><%= recommended_pathway.match_score %> %</p>
