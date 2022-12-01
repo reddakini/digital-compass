@@ -1,68 +1,53 @@
- <div class="content-overview">
-            <div class="overview-first-line">
-              <div class="progress-chart">
-                <h3>Progress</h3>
-                  <%= render "dashboards/progress" %>
+<div class="content-overview">
+  <div class="overview-first-line">
+    <div class="progress-chart">
+      <h3>Progress</h3>
+      <%= render "dashboards/progress" %>
 
-                  <div class="mt-5 progress-text">
-                    <p> ℹ️ Complete the Quiz, Skills and Values Assessment to advance your progression </p>
-                  </div>
-              </div>
+      <div class="mt-5 mb-2 progress-text">
+        <i class="fa-solid fa-circle-info"></i>
+        <p>Complete the Quiz, Skills and Values Assessment to advance your progression</p>
+      </div>
+    </div>
 
-              <div class="two-results">
-                <div class="two-results-heading">
-                  <h2>Your Top Matches</h2>
-                </div>
-
-                <div class="two-result-cards">
-
-                  <div class="result-card">
-                    <h3>DATA SCIENTIST</h3>
-                    <br>
-                    <h1>87%</h1>
-                    <div class="button-sec">
-                      <%= link_to "More >",  pathway_path(Pathway.find_by(name: 'Data Scientist')) %>
-                    </div>
-                  </div>
-                  <div class="result-card">
-                    <h3>BACK-END DEVELOPER</h3>
-                    <br>
-                    <h1>76%</h1>
-                    <div class="button-sec">
-                      <%= link_to "More >",  pathway_path(Pathway.find_by(name: 'BackEnd Developer')) %>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="overview-second-line" id="test">
-              <div class="overview-skills">
-                <h3>Your Skills</h3>
-                  <% if @user_skills.empty? %>
-                    <p>No skills added yet.</p>
-                    <%= link_to "You can add your skills here.", new_user_skill_path %>
-                  <% else %>
-                    <div class="skills-capsules">
-                      <% @user_skills.first(15).each do |skill| %>
-                        <p class="skill-stack"><%= skill.name %></p>
-                      <% end %>
-                    </div>
-                  <% end %>
-              </div>
-
-
-              <div class="values-chart">
-                <h3>Your Top 5 Work Values</h3>
-                <% if @user_values.where("importance > 0").empty? %>
-                  <p>No values added yet.</p>
-                  <%= link_to "You can add your values here.", dashboard_path(tab: "Values") %>
-                <% else %>
-                  <% @user_values.where("importance > 0").order(importance: :desc).first(5).each do |uv| %>
-                    <p class="value-stack"><%= uv.value.name %></p>
-                  <% end %>
-                <% end %>
-                <%#= bar_chart @user_values, download: "bar-chart", colors: ["#6E184F", "#716F35", "#DB9A8F", "#ECCC6E", "#A66940", "#F2E9E1", "#FCE8D2", "#E9E9E9", "#0E1251"] %>
-              </div>
-            </div>
+    <div class="quiz-results-chart">
+      <h3 class="mb-3">Your Top 5 Pathway Matches</h3>
+      <ul>
+        <% @recommended_pathways.each do |recommended_pathway| %>
+          <li><%= link_to "#{recommended_pathway.pathway.name} - #{recommended_pathway.match_score}%", pathway_path(recommended_pathway) %></li>
+        <% end %>
+      </ul>
+      <%#= bar_chart @reco_pathways_for_chart %>
+    </div>
+  </div>
+  
+  <div class="overview-second-line" id="test">
+    <div class="overview-skills">
+      <h3>Your Skills</h3>
+        <% if @user_skills.empty? %>
+          <p>No skills added yet.</p>
+          <%= link_to "You can add your skills here.", new_user_skill_path %>
+        <% else %>
+          <div class="skills-capsules">
+            <% @user_skills.first(15).each do |skill| %>
+              <p class="skill-stack"><%= skill.name %></p>
+            <% end %>
           </div>
+        <% end %>
+    </div>
+
+
+    <div class="values-chart">
+      <h3>Your Top 5 Work Values</h3>
+      <% if @user_values.where("importance > 0").empty? %>
+        <p>No values added yet.</p>
+        <%= link_to "You can add your values here.", dashboard_path(tab: "Values") %>
+      <% else %>
+        <% @user_values.where("importance > 0").order(importance: :desc).first(5).each do |uv| %>
+          <p class="value-stack"><%= uv.value.name %></p>
+        <% end %>
+      <% end %>
+      <%#= bar_chart @user_values, download: "bar-chart", colors: ["#6E184F", "#716F35", "#DB9A8F", "#ECCC6E", "#A66940", "#F2E9E1", "#FCE8D2", "#E9E9E9", "#0E1251"] %>
+    </div>
+  </div>
+</div>
