@@ -84,8 +84,8 @@
               <div data-controller="reveal" class="w-100" data-reveal-hidden-class="d-none">
                 <div class="d-flex align-items-center justify-content-end">
                   <button data-action="click->reveal#toggle" type="button" class="btn"><i class="fa-solid fa-pencil"></i></button>
-                  <%= button_to bookmark_path(bookmark), method: "delete" do %>
-                    <i class="fa-regular fa-trash-can"></i>
+                  <%= button_to bookmark_path(bookmark), method: "delete", class: "btn" do %>
+                    <i class="fa-regular fa-trash-can fa-2x"></i>
                   <% end %>
                 </div>
                 <div data-reveal-target="item" class="d-none mt-4">
@@ -107,4 +107,3 @@
   </div>
 
 </div>
-
