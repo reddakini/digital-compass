@@ -3,7 +3,7 @@
   <div class="dashboard-content">
     <div class="dashboard-header my-5">
       <div class="dashboard-heading">
-        <h2>Dashboard</h2>
+        <h2>Your Dashboard, <%= current_user.first_name %></h2>
       </div>
 
     <% unless current_user.recommendations.empty? %>
