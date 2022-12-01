@@ -13,12 +13,23 @@ class MatchScoreCalc < ApplicationService
       "UX/UI Designer" => 0,
       "IT Project Manager" => 0
     }
+    @max_scores = {
+      "BackEnd Developer" => 0,
+      "FrontEnd Developer" => 0,
+      "FullStack Developer" => 0,
+      "Data Scientist" => 0,
+      "Data Analyst" => 0,
+      "Digital Consultant" => 0,
+      "Product Manager" => 0,
+      "UX/UI Designer" => 0,
+      "IT Project Manager" => 0
+    }
     MATCHING_DATA.each do |hash|
       pathways = hash[:pathways]
       pathways.each do |element|
         pathway = element[:pathway]
         weight = element[:weight]
-        MAX_SCORES[pathway] += weight
+        @max_scores[pathway] += weight
       end
     end
   end
@@ -47,7 +58,7 @@ class MatchScoreCalc < ApplicationService
         recommendation: @recommendation,
         pathway: pathway,
         # Calculation needs to be enhanced, so that the result gets closer to 100% but not exceeds it!
-        match_score: (value.to_f / MAX_SCORES[key] * 150).to_i
+        match_score: (value.to_f / @max_scores[key] * 150).to_i
       )
       recommended_pathway.save
     end
@@ -363,18 +374,6 @@ class MatchScoreCalc < ApplicationService
       ]
     }
   ]
-
-  MAX_SCORES = {
-    "BackEnd Developer" => 0,
-    "FrontEnd Developer" => 0,
-    "FullStack Developer" => 0,
-    "Data Scientist" => 0,
-    "Data Analyst" => 0,
-    "Digital Consultant" => 0,
-    "Product Manager" => 0,
-    "UX/UI Designer" => 0,
-    "IT Project Manager" => 0
-  }
 end
 
 # Comments from Cornelius!!! Please leave here

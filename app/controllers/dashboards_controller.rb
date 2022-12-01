@@ -30,7 +30,7 @@ class DashboardsController < ApplicationController
     @user_skill = UserSkill.new
     @user_skills = current_user.skills
 
-    @recommendation = Recommendation.where(user: current_user).last
+    @recommendation = Recommendation.where(user: current_user).order(created_at: :desc).first
     @recommended_pathways = RecommendedPathway.where(recommendation: @recommendation).order(match_score: :desc).first(5)
   end
 end
