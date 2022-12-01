@@ -31,7 +31,6 @@ class DashboardsController < ApplicationController
     @user_skills = current_user.skills
 
     @recommendation = Recommendation.where(user: current_user).last
-    @recommended_pathways = RecommendedPathway.where(recommendation: @recommendation)
-    # @recommended_pathways.sort_by! { |pathway| pathway.match_score.value }
+    @recommended_pathways = RecommendedPathway.where(recommendation: @recommendation).order(match_score: :desc).first(5)
   end
 end
