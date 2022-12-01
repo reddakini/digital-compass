@@ -12,18 +12,25 @@
 
     <div class="quiz-results-chart">
       <h3 class="mb-5">Your Top Pathway Matches</h3>
-      <div class="pw-bar-chart">
-        <% opa = 1.0 %>
-        <% @recommended_pathways.each do |recommended_pathway| %>
-          <%= link_to pathway_path(recommended_pathway) do %>
-            <div class="pw-bar" style="width: <%= recommended_pathway.match_score %>%; opacity: <%= opa %>">
-              <p class="pw-name"><%= recommended_pathway.pathway.name %></p>
-              <p class="pw-score"><%= recommended_pathway.match_score %> %</p>
-            </div>
-            <% opa -= 0.1 %>
+      <% if @recommended_pathways.empty? %>
+        <div class="no-quiz">
+          <p>No recommendations yet.</p>
+          <%= link_to "You can take the initial quiz here.", assessment_path %>
+        </div>
+      <% else %>
+        <div class="pw-bar-chart">
+          <% opa = 1.0 %>
+          <% @recommended_pathways.each do |recommended_pathway| %>
+            <%= link_to pathway_path(recommended_pathway) do %>
+              <div class="pw-bar" style="width: <%= recommended_pathway.match_score %>%; opacity: <%= opa %>">
+                <p class="pw-name"><%= recommended_pathway.pathway.name %></p>
+                <p class="pw-score"><%= recommended_pathway.match_score %> %</p>
+              </div>
+              <% opa -= 0.1 %>
+            <% end %>
           <% end %>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
     </div>
   </div>
 
