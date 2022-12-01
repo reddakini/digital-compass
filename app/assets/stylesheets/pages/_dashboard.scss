@@ -88,9 +88,15 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 20px;
-  // align-items: center;
+
   h3 {
     text-align: center;
+  }
+
+  ul {
+    font-size: 24px;
+    padding-left: 50px;
+    padding-bottom: 25px;
   }
 }
 

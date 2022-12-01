@@ -32,5 +32,6 @@ class DashboardsController < ApplicationController
 
     @recommendation = Recommendation.where(user: current_user).last
     @recommended_pathways = RecommendedPathway.where(recommendation: @recommendation).order(match_score: :desc).first(5)
+    # @reco_pathways_for_chart =
   end
 end
