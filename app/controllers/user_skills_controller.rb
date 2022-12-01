@@ -29,7 +29,7 @@ class UserSkillsController < ApplicationController
     else
       interests = []
     end
-    
+
     levels.each do |id, mastery_level|
       @user_skill = UserSkill.find_by(skill_id: id, user_id: current_user.id)
       # if it exists in the learning interest
@@ -39,7 +39,7 @@ class UserSkillsController < ApplicationController
         @user_skill.update(mastery_level: mastery_level, learning_interest: false)
       end
     end
-    redirect_to dashboard_path(tab: "Skills")
+    redirect_to dashboard_path
   end
 
   private
