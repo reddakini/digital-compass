@@ -68,6 +68,16 @@
   font-size: 12px;
   color: gray;
   padding: 0px 20px;
+  display: flex;
+  align-items: center;
+
+  p {
+    margin: 0px;
+  }
+
+  i {
+    color: #f4e4f2;
+  }
 }
 
 .quiz-results-chart {
