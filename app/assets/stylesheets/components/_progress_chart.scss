@@ -1,3 +1,9 @@
+.progress-circle {
+  align-content: center;
+  justify-content: center;
+  display: flex;
+}
+
 .progress{
   width: 150px;
   height: 150px;
@@ -65,8 +71,8 @@
   width: 90%;
   height: 90%;
   border-radius: 50%;
-  background: #44484b;
-  font-size: 24px;
+  background: #f4e4f2;
+  font-size: 30px;
   color: #fff;
   line-height: 135px;
   text-align: center;
@@ -75,7 +81,7 @@
   left: 5%;
 }
 .progress.blue .progress-bar{
-  border-color: #049dff;
+  border-color: $primary;
 
   &.empty {
     border-color: transparent;
