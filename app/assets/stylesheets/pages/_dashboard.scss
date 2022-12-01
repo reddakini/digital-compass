@@ -113,15 +113,75 @@
   border-radius: 5px;
   padding: 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
+.overview-skills h3 {
+  margin-bottom: 20px;
+}
+
+.overview-skills a {
+  font-size: 16px;
+  color: $primary;
+}
+
+.overview-skills a:hover {
+  color: $secondary;
+}
+
+.skill-stack {
+  display: inline-block;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
+  font-size: 16px;
+  border-radius: 50rem;
+  padding: 0.2rem 0.8rem;
+  background-color: #FAF2DA;
+  color: $secondary;
+  border: 1px solid $secondary;
+  margin-right: 1.5rem;
+  margin-bottom: 1.5rem;
+  width: fit-content;
+}
+
+.skills-capsules {
+  margin: auto 0;
+}
+
+
 .values-chart {
-  // border: 1px solid orange;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
   padding: 20px;
-  // box-shadow: 1px 1px 13px grey;
-  // background-color: #e9e9e9;
+  text-align: center;
+}
+
+.value-stack {
+  // display: inline-block;
+  font-size: 16px;
+  border-radius: 50rem;
+  padding: 0.2rem 0.8rem;
+  background-color: #f4e4f2;
+  color: $primary;
+  border: 1px solid $primary;
+  // margin-right: 1.5rem;
+  // margin-bottom: 1.5rem;
+  width: fit-content;
+  margin: 0 auto 1.5rem auto;
+}
+
+.values-chart h3 {
+  margin-bottom: 20px;
+}
+
+.values-chart a {
+  font-size: 16px;
+  color: $primary;
+}
+
+.values-chart a:hover {
+  color: $secondary;
 }
 
 // ***************** results tab **************

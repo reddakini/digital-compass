@@ -1,4 +1,4 @@
- <div class="content-overview">
+<div class="content-overview">
   <div class="overview-first-line">
     <div class="progress-chart">
       <h3>Progress</h3>
@@ -19,22 +19,33 @@
       </ul>
       <%#= bar_chart @reco_pathways_for_chart %>
     </div>
-
-
   </div>
-
+  
   <div class="overview-second-line" id="test">
     <div class="overview-skills">
       <h3>Your Skills</h3>
-      <% @user_skills.first(5).each do |skill| %>
-        <%= skill.name %>
-      <% end %>
+        <% if @user_skills.empty? %>
+          <p>No skills added yet.</p>
+          <%= link_to "You can add your skills here.", new_user_skill_path %>
+        <% else %>
+          <div class="skills-capsules">
+            <% @user_skills.first(15).each do |skill| %>
+              <p class="skill-stack"><%= skill.name %></p>
+            <% end %>
+          </div>
+        <% end %>
     </div>
 
+
     <div class="values-chart">
-      <h3 class="mb-3">Your Top 5 Work Values</h3>
-      <% @user_values.where("importance >= 4").each do |uv| %>
-        <p class="value-stack"><%= uv.value.name %></p>
+      <h3>Your Top 5 Work Values</h3>
+      <% if @user_values.where("importance > 0").empty? %>
+        <p>No values added yet.</p>
+        <%= link_to "You can add your values here.", dashboard_path(tab: "Values") %>
+      <% else %>
+        <% @user_values.where("importance > 0").order(importance: :desc).first(5).each do |uv| %>
+          <p class="value-stack"><%= uv.value.name %></p>
+        <% end %>
       <% end %>
       <%#= bar_chart @user_values, download: "bar-chart", colors: ["#6E184F", "#716F35", "#DB9A8F", "#ECCC6E", "#A66940", "#F2E9E1", "#FCE8D2", "#E9E9E9", "#0E1251"] %>
     </div>
