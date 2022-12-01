@@ -92,11 +92,38 @@
   h3 {
     text-align: center;
   }
+}
 
-  ul {
-    font-size: 24px;
-    padding-left: 50px;
-    padding-bottom: 25px;
+.pw-bar-chart {
+  padding-inline: 25px;
+
+  .pw-bar {
+    background-color: $primary;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-inline: 20px;
+    padding-block: 5px;
+    border-radius: 0px 20px 20px 0px;
+    // transistion for hover!!!!!!
+
+    p {
+      color: $alm-white;
+      margin: 0px;
+      font-size: 20px;
+    }
+
+    .pw-score {
+      font-weight: 500;
+    }
+
+    &:hover {
+      background-color: #f4e4f2;
+
+      p {
+        color: $primary;
+      }
+    }
   }
 }
 

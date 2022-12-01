@@ -4,23 +4,29 @@
       <h3>Progress</h3>
       <%= render "dashboards/progress" %>
 
-      <div class="mt-5 mb-2 progress-text">
+      <div class="my-5 mb-2 progress-text">
         <i class="fa-solid fa-circle-info"></i>
         <p>Complete the Quiz, Skills and Values Assessment to advance your progression</p>
       </div>
     </div>
 
     <div class="quiz-results-chart">
-      <h3 class="mb-3">Your Top 5 Pathway Matches</h3>
-      <ul>
+      <h3 class="mb-5">Your Top Pathway Matches</h3>
+      <div class="pw-bar-chart">
+        <% opa = 1.0 %>
         <% @recommended_pathways.each do |recommended_pathway| %>
-          <li><%= link_to "#{recommended_pathway.pathway.name} - #{recommended_pathway.match_score}%", pathway_path(recommended_pathway) %></li>
+          <%= link_to pathway_path(recommended_pathway) do %>
+            <div class="pw-bar" style="width: <%= recommended_pathway.match_score %>%; opacity: <%= opa %>">
+              <p class="pw-name"><%= recommended_pathway.pathway.name %></p>
+              <p class="pw-score"><%= recommended_pathway.match_score %> %</p>
+            </div>
+            <% opa -= 0.1 %>
+          <% end %>
         <% end %>
-      </ul>
-      <%#= bar_chart @reco_pathways_for_chart %>
+      </div>
     </div>
   </div>
-  
+
   <div class="overview-second-line" id="test">
     <div class="overview-skills">
       <h3>Your Skills</h3>
