@@ -12,6 +12,7 @@ class Typeform < ApplicationService
   private
 
   def typeform_parsing
+    sleep(2.0)
     response_serialized = URI.open(@url, "Authorization" => "bearer #{ENV.fetch('TYPEFORM_API_KEY')}").read
     response = JSON.parse(response_serialized)
     answers = []
