@@ -75,7 +75,7 @@
   border: 1px solid $primary;
 }
 
-.already-signed {
+.other-links {
   text-align: center;
   margin-top: 5px;
 }
@@ -94,7 +94,7 @@
 .login-flex {
   display: flex;
   justify-content: center;
- }
+}
 
 .login-form-and-heading {
   margin-top: 70px;
@@ -108,7 +108,16 @@
   margin-bottom: 20px;
 }
 
+.form-login {
+  border-radius: 5px;
+  width: 350px;
+  padding: 45px 35px 35px 35px;
+  background-color: $alm-white;
+  font-size: 15px;
+  height: 410px;
+}
+
 .log-in-btn {
- margin-bottom: 20px;
- margin-top: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }

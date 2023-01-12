@@ -5,7 +5,7 @@
       <h2>Log in</h2>
 
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
-        <div class="form-signup form-login">
+        <div class="form-login">
           <div class="form-inputs">
             <%= f.input :email,
                         required: false,
@@ -20,7 +20,10 @@
           <div class="form-actions">
             <%= f.button :submit, "Log in", class: "sign-up-btn log-in-btn" %>
           </div>
-          <%= render "devise/shared/links" %>
+          
+          <div class="other-links">
+            <%= render "devise/shared/links" %>
+          </div>
         </div>
       <% end %>
     </div>
